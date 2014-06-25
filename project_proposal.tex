@@ -4,6 +4,7 @@
 \usepackage{aeguill} 
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{gensymb}
 \usepackage{fullpage}
 \graphicspath{ {project_proposal_img/} }
  
@@ -207,32 +208,74 @@ Concluding, the rover is a construction of various polymers and metals, and a sm
 \section{Rover Subsystems}
 
 \subsection{Electronics}
+
+
 \subsection{Power \& Thermal}
+
+The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+\phi$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see figure xxxx).
+
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.6\textwidth]{sun}
+    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+\end{figure}
+
+
+ This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated.
+Assuming our panels are installed vertically and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
+
+To summarise, a panel surface of $0.25m^2$ will provide us with an average (seasonal, daily) power of 10W and these numbers are proportional. 
+
+
+
+
+The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on temperature thresholds listed below. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
+
+
 \subsection{Mechanical}
 The rover body design (fig. 1) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
 
-\begin{figure}[t]
+\begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{conceptrover}
-    \caption{Rover design concept built after MUSES-CN nanorover.}
+    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
 \end{figure}
 
-As seen in figure 2 this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts.
+As depicted in figure 2, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a seperate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
+Another benefit of this design is it allowing us to build a simpler drilling device. When drilling an ice core, the rover can lower itself to the ground exploiting its own weight as pressure onto the drill. The drill bit just needs to spin and doesn't need to retract into the rover body.
 
 \begin{figure}[h!]
+\centering
 \begin{tabular}{ c  c  c }
-
 \includegraphics[width=0.3\textwidth]{drive} & \includegraphics[width=0.25\textwidth]{upright} & \includegraphics[width=0.4\textwidth]{flat} \\
-
 \end{tabular}
-\caption{Different wheel strut configurations l.t.r.: drive mode, solar recharge mode, wind protect mode.}
-
+\caption{Different wheel strut configurations l.t.r.: (1) drive mode, (2) solar recharge mode, (3) wind protect mode.}
 \end{figure}
+
+
+\subsection{Mobility}
+Snowy and icy terrain will be Octanis' main habitat and so its wheels need to be specifically designed to be wide, lightweight and should provide a good traction going upwards. 
+All four wheels will be individually motorised and provide enough torque to move Octanis on an inclination of 30 degrees. Turning can be achieved by rotating the wheels on each side at different speeds. 
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.4\textwidth]{wheel}
+    \caption{Initial wheel design. Fins allow the wheel to dig into the snow while driving providing better traction.}
+\end{figure}
+
+
+An inertial measurement unit (IMU) will be used to know the rovers orientation at any point in time. It consists of a gyroscope, accelerometer, precision barometer and magnetometer. The sensors information is fed back to the control systems that actuate the motors. Should the rover need to go over an obstacle, the wheel struts will be rotated as far as possible so that the rover body is always in a plane parallel to the ground. This minimises the risk of being tipped over and should allow the easy traversal of obstacles higher than the wheel radius and is similar to the rocker-bogie suspension system used on NASAs mars rovers \cite{rockerbogie}. Due to the high risk of overturn caused by wind gusts the passive rocker-bogie design was not chosen, since there would be no simple way of righting back up.
 
 
 \subsection{Communication}
+Regular data transmission is a mission critical feature of the rover. It is achieved by using the Iridium Short Burst Data (SBD) service with the help of the RockBLOCK Iridium 9602 modem \cite{iridium}. This modem allows the transmission of data packets of up to 340 bytes outwards and 270 bytes inwards approximately every 20 seconds. Larger data frames can be fragmented and transmitted with multiple packets. The key to this modem and network is that is available everywhere on Earth at any time, something that cannot be said of the GSM network or even amateur radio. That the modem require just as low power as the GPS on board adds to the list of benefits. Information sent through the Iridium network is automatically sent to a server and uploaded to the project website, where the public can view Octanis' state and data.
+
+Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmitting sensor data and location information on the 2-meter band. This can be received by amateur radio operators (or unlicensed individuals with radio scanners) who are in range. The range of this transmitter is typically hundreds of kilometers when travelling in the sky (i.e. attached to a balloon). On the ground, the range is orders of magnitude smaller.
+
+
 \subsection{Optical}
-\subsection{Mobility}
+
 
 
 \section{Science Mission}
@@ -263,9 +306,16 @@ As seen in figure 2 this rover design allows many orientations for different sit
 {\em Octanis 1 GitHub repositories website} http://github.com/octanis1, 25.6.2014.
 
 \bibitem{muses}
-  Brian H. Wilcox, Ross M. Jones
+  Brian H. Wilcox, Ross M. Jones, 
   \emph{The MUSES-CN Nanorover Mission and Related Technology}.
   IEEE Aerospace 2000 Conference, 18.3.1999.
+
+
+\bibitem{rockerbogie}
+  Hayati, S., et. al., 
+  \emph{The Rocky 7 Rover: A Mars Sciencecraft Prototype}.
+  Proceedings of the 1997 IEEE International Conference on Robotics and Automation, pp. 2458-64, 1997.
+
 
 
 \end{thebibliography}
