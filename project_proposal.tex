@@ -36,7 +36,7 @@
 
 % Bottom of the page
 {\large \today} \\
-\textsc{\small www.octanis.org}
+\textsc{\small info@octanis.org | www.octanis.org}
 \vspace{50pt}
 
 
@@ -240,12 +240,32 @@ Concluding, the rover is a construction of various polymers and metals, and a sm
 
 \section{Rover Subsystems}
 
-\subsection{Electronics}
+\subsection{Board Computer}
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=1\textwidth]{schema}
+    \caption{Schema of the on-board computing system with peripherals.}
+\end{figure} 
+The Texas Instruments MSP430 16-bit ultra-low power microcontroller family is the preferred processor choice for the embedded computer system of the rover. The microcontroller will take over most control and regulation tasks, specifically driving, navigation, communications and sensor processing. The system will run a realtime operating system capable of reliably multitasking with prioritised tasks. The computer will interact with the following on-board peripherals:
+
+\begin{itemize}
+\item Inertial Measurement Unit: accelerometer, gyroscope, magnetometer, precision barometer.
+\item Weather module: temperature, barometer, hygrometer, anemometer.
+\item Science instrument: pH probe.
+\item Optics module: camera, distance sensors.
+\item Drive module: motor controllers, current sensors.
+\item Communication: Iridium, APRS, ZigBee.
+\item SD card memory.
+\item GPS module.
+\end{itemize}
+
+An auxiliary computer will take over if the main computer malfunctions. It will try to reset the main computer and if unsuccessful provide basic system functionality.
+
 
 
 \subsection{Power \& Thermal}
 
-The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+\phi$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see figure xxxx).
+The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+\phi$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
 
 
 \begin{figure}[h!]
@@ -255,7 +275,7 @@ The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 
 \end{figure}
 
 
- This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated.
+ This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated \cite{pvedu}. 
 Assuming our panels are installed vertically and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
 
 To summarise, a panel surface of $0.25m^2$ will provide us with an average (seasonal, daily) power of 10W and these numbers are proportional. 
@@ -267,7 +287,7 @@ The ultimate priority is to keep the system at -20\degree C or above, which mean
 
 
 \subsection{Mechanical}
-The rover body design (fig. 1) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
+The rover body design (fig. 5) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
 
 \begin{figure}[h!]
 	\centering
@@ -275,7 +295,7 @@ The rover body design (fig. 1) has been substantially influenced by NASA's MUSES
     \caption{Octanis rover design concept built after MUSES-CN nanorover.}
 \end{figure}
 
-As depicted in figure 2, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a seperate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
+As depicted in figure 6, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a seperate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
 Another benefit of this design is it allowing us to build a simpler drilling device. When drilling an ice core, the rover can lower itself to the ground exploiting its own weight as pressure onto the drill. The drill bit just needs to spin and doesn't need to retract into the rover body.
 
 \begin{figure}[h!]
@@ -309,14 +329,18 @@ Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmit
 
 
 \subsection{Optical}
+Octanis will be able to take snapshots on-demand with a low resolution camera. It is part of an experiment to find out if an image can be efficiently sent via the Iridium network. Additionally we would like to test on-board image processing (e.g. simple feature detection). The optical system is completed by distance sensors that can detect nearest obstacles. It will be evaluated if the Neato XV-11's LIDAR \cite{lidar} can be used or if we should proceed with IR distance sensors.
 
 
+\subsection{Scientific Instrument}
+The preferred scientific instrument for this mission is a ice core drill combined with a pH probe. The drill is able to drill a small 1cm x 5cm ice/snow core, retract it from the cold surface and then melt the sample. The ice/snow-water can be analysed with a pH probe, that is typically a glass electrode, to determine the pH value. Due to the low-cost nature of the sensor to be used, precision cannot be guaranteed by the manufacturer and has to be calibrated and tested by us. It is though assumed that the device will give good readings for comparison of a high quantity of samples.
 
-\section{Science Mission}
+\pagebreak
 
-\subsection{Snow and Ice}
+\section{Conclusion}
+Knowing that this mission is an ambitious one and will have many challenges to be solved on the way, we believe that it is a possible and viable project. When we can achieve our objectives, we will be able to provide the scientific community (including so-called citizen scientists) with a universal and adaptable rover platform. Proving ourselves in the harsh environment of Antarctica means that our rover can survive many other similar environments. \\
 
-\cite{krishnakant} 
+We hope to fascinate and inspire students, teachers, artists, entrepreneurs, scientists - in the end all people - for interdisciplinary research, engineering and knowledge sharing, hoping that they will join us on the grand mission to a better world!
 
 
 \pagebreak
@@ -368,8 +392,13 @@ Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmit
 	{\em Hackerspace definition}, \\
 	http://en.wikipedia.org/wiki/Hackerspace, 25.6.14.
 
+\bibitem{pvedu}
+	{\em Effect of Light Intensity}, \\
+	http://www.pveducation.org/pvcdrom/solar-cell-operation/effect-of-light-intensity, 25.6.14.
 
-
+\bibitem{lidar}
+	{\em Neato XV-11 LIDAR / Piccolo Laser Distance Sensor}, \\
+	http://xv11hacking.wikispaces.com/LIDAR+Sensor, 25.6.14.
 
 \end{thebibliography}
 
