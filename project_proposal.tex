@@ -191,7 +191,31 @@ The only reoccuring costs are caused by the Iridium Satellite Messenger \cite{ir
 
 \section{Rover Transportation and Deployment}
 
-	
+Octanis 1 is a light-weight rover meaning its total mass will not exceed 2.5kg. Thanks to this there are multiple cost-effective deployment options available which are listed below:
+
+\subsection{Methods of deployment}
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.4\textwidth]{trajectory}
+    \caption{HYSPLIT trajectory simulation starting in Rio Grande, Argentina.}
+\end{figure}
+
+\paragraph{High Altitude Balloons} or more commonly known, weather balloons, can be used to bring the rover to its target destination. Helium-filled, they typically float up to an altitude of 30km and a trajectory of hundreds of kilometers can be achieved. However the path of the balloon cannot be controlled and relies on rigorous pre-flight simulations with the HYSPLIT simulation software \cite{hysplit} \cite{hysplitjava}. This is the cheapest method to deploy the rover to Antarctica as it is only required to travel to lower South America, to which commercial flights exist, to launch the rover attached to the balloon. With this benefit comes a higher risk of deployment failure. Even with precise weather models, the weather could suddenly change and move the balloon off its path. That being said, HYSPLIT was already successfully used in numerous ballooning projects like Piccard and Jones' Breitling-Orbiter 3 \cite{hysplitexamples}.
+Once the balloon-rover-configuration have reached their target destination, the rover is separated from the balloon and parachutes to the ground. The balloon continues on uncontrolled and will eventually burst or float to the ground after the helium diffuses out.
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.5\textwidth]{lowcostchute}
+    \caption{Depicted is one of our self-built, low-cost parachutes during a test. }
+\end{figure}
+
+
+\paragraph{Helicopter} - a method to consider is to deploy Octanis out of a helicopter which is already on a specific route. The rover could be given to one of the passengers or attached to the transport cord and detached on demand. Similar to balloon deployment, Octanis would swiftly parachute to the ground and begin its mission.
+
+
+\paragraph{Manual} deployment is suggested when costs and risk need to be as low as possible. This is by far the easiest method and just means going to the desired location and setting the rover down. Octanis continues on by its own and can return to the set-down location.
+
 
 
 
@@ -267,6 +291,7 @@ All four wheels will be individually motorised and provide enough torque to move
 
 An inertial measurement unit (IMU) will be used to know the rovers orientation at any point in time. It consists of a gyroscope, accelerometer, precision barometer and magnetometer. The sensors information is fed back to the control systems that actuate the motors. Should the rover need to go over an obstacle, the wheel struts will be rotated as far as possible so that the rover body is always in a plane parallel to the ground. This minimises the risk of being tipped over and should allow the easy traversal of obstacles higher than the wheel radius and is similar to the rocker-bogie suspension system used on NASAs mars rovers \cite{rockerbogie}. Due to the high risk of overturn caused by wind gusts the passive rocker-bogie design was not chosen, since there would be no simple way of righting back up.
 
+Octanis' top speed is estimated to be at 100cm/min. Disregarding energy availability depending on weather, gives it a daily range of around 1km. There will be two driving modes: discovery and shortest path. \textbf{Discovery mode} will make the rover densely traverse either a preprogrammed circular area of a map or on detecting a certain phenomena (e.g. higher pH levels). \textbf{Shortest path} brings Octanis from waypoint to waypoint using the shortest path. Both methods can be used in combination. Detected obstacles can be stored as landmarks and help build a rough map.
 
 \subsection{Communication}
 Regular data transmission is a mission critical feature of the rover. It is achieved by using the Iridium Short Burst Data (SBD) service with the help of the RockBLOCK Iridium 9602 modem \cite{iridium}. This modem allows the transmission of data packets of up to 340 bytes outwards and 270 bytes inwards approximately every 20 seconds. Larger data frames can be fragmented and transmitted with multiple packets. The key to this modem and network is that is available everywhere on Earth at any time, something that cannot be said of the GSM network or even amateur radio. That the modem require just as low power as the GPS on board adds to the list of benefits. Information sent through the Iridium network is automatically sent to a server and uploaded to the project website, where the public can view Octanis' state and data.
@@ -316,6 +341,15 @@ Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmit
   \emph{The Rocky 7 Rover: A Mars Sciencecraft Prototype}.
   Proceedings of the 1997 IEEE International Conference on Robotics and Automation, pp. 2458-64, 1997.
 
+\bibitem{hysplit}
+  {\em HYSPLIT - Hybrid Single Particle Lagrangian Integrated Trajectory Model }, NOAA, http://www.ready.noaa.gov/HYSPLIT.php, 23.6.2014.
+
+\bibitem{hysplitjava}
+  {\em JAVA software to run multiple HYSPLIT simulations to find the optimal parameters for a trajectory}, http://github.com/octanis1/OctanisHYSPLIT, 23.6.2014.
+
+\bibitem{hysplitexamples}
+	{\em Ballooning with HYSPLIT}, \\
+	http://www.arl.noaa.gov/documents/workshop/Spring2010/Balloon\_flights.ppt, 23.6.2014.
 
 
 \end{thebibliography}
