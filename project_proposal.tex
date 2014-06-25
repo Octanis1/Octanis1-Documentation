@@ -53,7 +53,7 @@
 
 \section{Mission Overview}
 
-The aim of this mission, Octanis 1, is to provide a low-cost, low environmental impact rover platform for scientific experiments in cold to extremely cold environments. The rover will be small and light-weight enough to be carried on weather balloons. Its design will allow it to traverse icy terrain and be resistant to wind gusts. It will generate its own power with solar panels and regulate internal temperature as it's first priority. The rover will be on a four-wheel drive platform, each wheel being on a controllable strut, allowing it to drive in any orienation and "stand back up" should it tip over.
+The aim of this mission, Octanis 1, is to provide a low-cost, low environmental impact rover platform for scientific experiments in cold to extremely cold environments. The rover will be small and light-weight enough to be carried on weather balloons. Its design will allow it to traverse icy terrain and be resistant to wind gusts. It will generate its own power with solar panels and regulate internal temperature as it's first priority. The rover will be on a four-wheel drive platform, each wheel being on a controllable strut, allowing it to drive in any orienation and right itself should it flip over. 
 
 
 \subsection{Objectives}
@@ -84,6 +84,7 @@ WP3 Robotics:
 Dates are for the year 2014 if not otherwise stated. The detailled dates for the science mission is to be determined in coordination with the collaborating Antarctic base. The project is managed transparently and in an agile manner and the development is strictly cyclic as to quickly incorporate urgent features as their need emerges. This method has worked well in the past and has proven to enable fast response to bugs and keep the costs low. Transparency is provided by opening all documentation to the public via GitHub \cite{octanisgithub} repositories. 
 
 \begin{table}[h!]
+\centering
 \begin{tabular}{ l | l | l | c }
 
 \bfseries{Code} & \bfseries{Mission Phase} & \bfseries{Dates} & \bfseries{Weeks} \\
@@ -99,12 +100,14 @@ F & Parachute Deployment Testing & 14.12. - 21.12. & 1 \\
 0.2 & Deployment Opportunity in Antarctica & 1.12.2016 &  1 \\
 
 \end{tabular}
+\caption{Development timeline.}
 \end{table}
 
 After deployment, the schedule of the science mission will proceed as described in the following table. Note that during the whole mission there will be a constant satellite data connection to the rover. Basic heartbeat information and sensory data will be transmitted multiple times per day. Commands to intercept the mission progress can be sent at any time.
 
 
 \begin{table}[h!]
+\centering
 \begin{tabular}{ l | l | c }
 \bfseries{Code} & \bfseries{Mission Phase} & \bfseries{Weeks} \\
 \hline
@@ -116,6 +119,7 @@ After deployment, the schedule of the science mission will proceed as described 
 4 (*)& Testing of Amateur Packet Radio Transmission  & 3 \\
 
 \end{tabular}
+\caption{Science Mission timeline.}
 \end{table}
 *Depending on the deployment location and Antarctic base station radio capabilities.
 
@@ -162,6 +166,7 @@ We are a group of students willing to challenge ourselves to the limit. Octanis 
 The following table describes the planned costs with an accuracy of $\pm 20\%$ (m.c. = mission critical): \\ 
 
 \begin{table}[h!]
+\centering
 \begin{tabular}{ l | c || r }
   Cost Item & Priority & One-Time Costs \\
   \hline
@@ -175,6 +180,7 @@ The following table describes the planned costs with an accuracy of $\pm 20\%$ (
   & & mission critical: 3700 CHF  \\
   & & optional: 1500 CHF \\
 \end{tabular}
+\caption{General budget.}
 \end{table}
 
 
@@ -201,8 +207,29 @@ Concluding, the rover is a construction of various polymers and metals, and a sm
 \section{Rover Subsystems}
 
 \subsection{Electronics}
-\subsection{Power}
+\subsection{Power \& Thermal}
 \subsection{Mechanical}
+The rover body design (fig. 1) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
+
+\begin{figure}[t]
+	\centering
+    \includegraphics[width=0.5\textwidth]{conceptrover}
+    \caption{Rover design concept built after MUSES-CN nanorover.}
+\end{figure}
+
+As seen in figure 2 this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts.
+
+\begin{figure}[h!]
+\begin{tabular}{ c  c  c }
+
+\includegraphics[width=0.3\textwidth]{drive} & \includegraphics[width=0.25\textwidth]{upright} & \includegraphics[width=0.4\textwidth]{flat} \\
+
+\end{tabular}
+\caption{Different wheel strut configurations l.t.r.: drive mode, solar recharge mode, wind protect mode.}
+
+\end{figure}
+
+
 \subsection{Communication}
 \subsection{Optical}
 \subsection{Mobility}
@@ -235,7 +262,11 @@ Concluding, the rover is a construction of various polymers and metals, and a sm
 \bibitem{octanisgithub}
 {\em Octanis 1 GitHub repositories website} http://github.com/octanis1, 25.6.2014.
 
- 
+\bibitem{muses}
+  Brian H. Wilcox, Ross M. Jones
+  \emph{The MUSES-CN Nanorover Mission and Related Technology}.
+  IEEE Aerospace 2000 Conference, 18.3.1999.
+
 
 \end{thebibliography}
 
