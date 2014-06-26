@@ -263,9 +263,9 @@ An auxiliary computer will take over if the main computer malfunctions. It will 
 
 
 
-\subsection{Power \& Thermal}
+\subsection{Power}
 
-The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+\phi$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
+The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+|\phi|$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
 
 
 \begin{figure}[h!]
@@ -276,12 +276,12 @@ The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 
 
 
  This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated \cite{pvedu}. 
-Assuming our panels are installed vertically and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
+Assuming our panels are installed horizontally and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
 
 To summarise, a panel surface of $0.25m^2$ will provide us with an average (seasonal, daily) power of 10W and these numbers are proportional. 
 
 
-
+\subsection{Thermal}
 
 The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on temperature thresholds listed below. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
 
