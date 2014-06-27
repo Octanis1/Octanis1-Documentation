@@ -6,9 +6,9 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{fullpage}
+\usepackage[ngerman]{babel}
 \graphicspath{ {project_proposal_img/} }
  
-
 
 \begin{document}
 
@@ -19,10 +19,10 @@
 % only works if a paragraph has started.
 \includegraphics[width=0.35\textwidth]{patch}~\\[2cm]
 
-\textsc{\Large Project Proposal}\\[0.5cm]
+\textsc{\Large Projektvorschlag}\\[0.5cm]
 
 % Title
-\huge \bfseries Octanis 1: A low-cost autonomous rover for Antarctica with real-time data transmission via satellite \\[0.4cm] 
+\huge \bfseries Octanis 1: Ein autonomer low-cost Roboter für die Antarktis mit satelitengestützter Datenübertragung \\[0.4cm] 
 
 \vspace{23pt}
 \includegraphics[width=0.25\textwidth]{black_logo} \\
@@ -38,10 +38,10 @@
 \centering
 \vspace{1pt}
 \begin{tabular}{ l  l  l }
-	\textbf{Rev.} & \textbf{Changes} & \textbf{Authors} \\
-	25.6.14 & Initial proposal & Sam Sulaimanov, Raffael Tschui, Ana Roldán, Pamela Canjura \\
-	27.6.14 & Spanish version & Ana Roldán \\
-	27.6.14 & German version & Raffael Tschui \\
+	\textbf{Revisionen} & \textbf{Änderungen} & \textbf{Autoren} \\
+	25.6.14 & Englische Originalfassung & Sam Sulaimanov, Raffael Tschui, \\ & & Ana Roldán, Pamela Canjura \\
+	27.6.14 & Spanische Verison & Ana Roldán \\
+	27.6.14 & Deutsche Version & Raffael Tschui \\
 \end{tabular}
 \end{table}
 
@@ -52,24 +52,24 @@
 
 \pagebreak
 
-\section{Introduction}
-»octanis | discovery and exploration« \cite{octanis} is a student initiative to embark on ambitious and challenging projects together as multi-disciplinary students. Octanis 1 is our first mission to build a low-cost autonomous rover for polar, snow or ice covered regions. In this first iteration we will be specialising the rover for the coastal regions of Antarctica and its specific weather conditions. The rover will transmit sensor data like temperature, air pressure, relative humidity, current position and pose. There will be optical instruments on-board as well to sense obstacles and take pictures of the environment in its close vicinity. Other more specific environmental data collection is possible, but needs to be specially addressed due to the non-negligible power and weight requirements. These could be the concentration of an atmospheric gas, $\alpha, \beta, \gamma$ radiation levels or snow and ice sampling. \\ We have selected the periodic sampling of snow and ice to be the most suitable initial science mission for Octanis 1 \cite{krishnakant}. The rover will have a small hollow device capable of drilling into the surface ice or snow, melting the sample and analysing the pH.
-\\ Energy will be provided by the solar panels on Octanis' surfaces and used throughout the Antarctic summer in combination with a battery pack. Communications will go through the Iridium satellite network \cite{iridium}, providing a low cost, low power and reliable data transmission at any location on Earth. 
+\section{Einführung}
+»octanis | discovery and exploration« \cite{octanis} ist ein ambitiöses und herausforderndes Projekt, initiiert durch eine interdisziplinäre Gruppe von Studenten. Octanis 1 ist unsere erste Mission mit dem Ziel, einen günstigen, autonomen Roboter zu bauen der sich in polaren, schnee- und eisbedeckten Regionen bewegen kann. In einem ersten Schritt spezialisieren wir den Roboter für Wetterbedingungen der küstennahen Gebiete der Antarktis. Der Roboter wird Daten wie Temperatur, Luftdruck, relative Luftfeuchtigkeit, aktuelle Position und Lage übertragen können. Optische Sensoren an Bord werden Hindernisse erkennen und Fotos der näheren Umgebung machen können. Weitere spezifischere Datensammlung ist durchaus möglich, muss aber wegen der Energie- und Platzbeschränkungen speziell geprüft werden. Beispiele dafür sind die Konzentration eines bestimmten Gases in der Atmosphäre, $\alpha, \beta, \gamma$ Strahlung oder die Entnahme von Schnee- oder Eisproben. \\
+Als eine geeignete erste wissenschaftliche Mission für Octanis 1 \cite{krishnakant} bestimmten wir die regelmässige Bodenentnahme von Schnee und Eis. Der Roboter wird mit einem kleinen holen Gerät ausgestattet sein, welches ihm ermöglicht, in die Oberfläche zu bohren, den Schnee oder das Eis zu schmelzen und schliesslich dessen pH-Wert bestimmen.\\ 
+Die Energie für Octanis liefern die Solarzellen auf seiner Oberfläche, welche die Sonnenenergie in Strom umwandeln und in einer Batterie speichern können. Dank dem Irdium Satelitennetzwerk \cite{iridium}, welches eine günstige, energieeffiziente und zuverlässige Datenübertragung bereitstellt, ist es uns möglich, mit dem Roboter in einem beliebigen Punkt der Erde zu kommunizieren.
 
 
+\section{Überblick}
 
-\section{Mission Overview}
-
-The aim of this mission, Octanis 1, is to provide a low-cost, low environmental impact rover platform for scientific experiments in cold to extremely cold environments. The rover will be small and light-weight enough to be carried on weather balloons. Its design will allow it to traverse icy terrain and be resistant to wind gusts. It will generate its own power with solar panels and regulate internal temperature as it's first priority. The rover will be on a four-wheel drive platform, each wheel being on a controllable strut, allowing it to drive in any orientation and right itself should it flip over. 
+Das Ziel der Mission Octanis 1 ist eine günstige Roboterplatform zur Verfügung zu stellen, welche nur kleine Auswirkungen auf die Umwelt hat und sich für wissenschaftliche Experimente in einer sehr kalten Umgebung eignet. Der Roboter wird so klein und leicht sein, dass er mit einem Wetterballon transportiert werden kann und seine Bauweise ermöglicht es ihm, eisiges Terrain zu durchqueren und gleichzeitig windresistent zu sein. Dank Solarzellen wird er alle nötige Energie selbst generieren und kann somit seine interne Temperatur regulieren, was sich als überlebenswichtig herausstellt. Die Platform des Roboters bekommt vier Räder, die allesamt ????????????????????????... being on a controllable strut, allowing it to drive in any orientation and right itself should it flip over. 
 
 
-\subsection{Objectives}
+\subsection{Ziele}
 
-\paragraph{Robotics}
-A weather-proof, cold-resistant and light-weight rover shall be built that has a simple but solid hardware and software design. The rover must be able to complete a mission autonomously with assistance where necessary. A mission contains a movement path and sensing actions to be executed. Interrupting or aiding commands to be executed by the rover can be sent via the Internet to the rover. Energy generation and storage shall be dealt with in such a way that a mission can continue for several months without human interception.
+\paragraph{Robotik}
+Es soll ein allwettertauglicher Leichtbauroboter entstehen mit einem einfachen, aber robusten Hardware- und Softwaredesign. Der Roboter muss die Mission grösstenteils autonom zu Ende führen können mit Hilfe nur da wo sie nötig ist. Eine Mission enthält einen abzufahrenden Pfad und auszuführende Messungen. Über das Internet können Abbruch- oder Hilfskommandos zum Roboter gesendet werden. Das interne Kraftwerk soll dem Roboter genügend Energie liefern damit er eine Mission während mehrerer Monate ohne menschliches Zutun ausführen kann.
 
-\paragraph{Sensing}
-The rover shall carry sensors on board to regularly record and transmit the state of the external and internal environment in a given location. It should provide a standard interface so that scientific instruments can be embedded and exchanged in a simple manner. All data transmitted to and from the rover shall be publicly available on the Internet in real-time. The rover shall have an interface to participate in a wider spread sensor network so that future rovers can work as a swarm.
+\paragraph{Sensorik}
+An Bord des Roboters befinden sich Messgeräte, welche regelmässig den Status der inneren und äusseren Umgebung speichern und übertragen können. Die standardisierten Schnittstellen werden es ermöglichen, wissenschaftliche Instrumente einfach ein- und auszubauen. Sämtliche übertragene Daten von und zum Roboter werden öffentlich in Echtzeit im Internet abrufbar sein. Eine spezifische Schnittstelle wir des ihm erlauben, mit zukünftigen Roboter in einem Sensornetzwerk zu kommunizieren und als Schwarm funktionnieren.
 
 \paragraph{Deployment}
 Various methods of deploying the rover, long and short range, shall be evaluated and compared. Their costs and risks shall be weighed.
