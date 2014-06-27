@@ -257,13 +257,14 @@ An auxiliary computer will take over if the main computer malfunctions. It will 
 
 \subsection{Power}
 
-The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ \cite{solarc} and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+|\phi|$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
+The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ \cite{solarc} and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+|\phi|$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig.\ref{sunrayangle}).
 
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.6\textwidth]{sun}
-    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \caption{Illustration of the sun ray exposure angle on a certain latitude}
+    \label{sunrayangle}
 \end{figure}
 
 
@@ -275,19 +276,20 @@ To summarise, a panel surface of $0.25m^2$ will provide us with an average (seas
 
 \subsection{Thermal}
 
-The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on temperature thresholds listed below. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
+The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on specific temperature thresholds. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
 
 
 \subsection{Mechanical}
-The rover body design (fig. 5) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
+The rover body design (fig.\ref{cadmodel}) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{conceptrover}
     \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \label{cadmodel}
 \end{figure}
 
-As depicted in figure 6, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a separate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
+As depicted in figure \ref{wheelconfig}, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a separate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
 Another benefit of this design is it allowing us to build a simpler drilling device. When drilling an ice core, the rover can lower itself to the ground exploiting its own weight as pressure onto the drill. The drill bit just needs to spin and doesn't need to retract into the rover body.
 
 \begin{figure}[h!]
@@ -296,6 +298,7 @@ Another benefit of this design is it allowing us to build a simpler drilling dev
 \includegraphics[width=0.3\textwidth]{drive} & \includegraphics[width=0.25\textwidth]{upright} & \includegraphics[width=0.4\textwidth]{flat} \\
 \end{tabular}
 \caption{Different wheel strut configurations l.t.r.: (1) drive mode, (2) solar recharge mode, (3) wind protect mode.}
+\label{wheelconfig}
 \end{figure}
 
 
