@@ -237,78 +237,80 @@ Concluding, the rover is a construction of various polymers and metals, and a sm
 
 
 
-\section{Rover Subsystems}
+\section{Roboter Subsysteme}
 
 \subsection{Board Computer}
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=1\textwidth]{schema}
-    \caption{Schema of the on-board computing system with peripherals.}
+    \caption{Schema des Rechnersystems und der Peripherie an Bord}
 \end{figure} 
-The Texas Instruments MSP430 16-bit ultra-low power microcontroller family is the preferred processor choice for the embedded computer system of the rover. The microcontroller will take over most control and regulation tasks, specifically driving, navigation, communications and sensor processing. The system will run a realtime operating system capable of reliably multitasking with prioritised tasks. The computer will interact with the following on-board peripherals:
+
+Die 16-bit MSP430 Mikrocontrollerfamilie von Texas Instruments ist die bevorzugte Wahl für das Computersystem im Roboter. Der Mikrocontroller übernimmt die meisten Kontroll- und Regelungsaufgaben, insbesondere Fahren, Navigieren, Kommunikation und Bearbeiten von Sensordaten. Darauf laufen wird ein Realtime Operating System, welches mit Multitasking unterschiedlich priorisierte Aufgaben zuverlässig ausführen kann. Der Computer interagiert mit den folgenden Peripheriegeräte an Bord:
 
 \begin{itemize}
-\item Inertial Measurement Unit: accelerometer, gyroscope, magnetometer, precision barometer.
-\item Weather module: temperature, barometer, hygrometer, anemometer.
-\item Science instrument: pH probe.
-\item Optics module: camera, distance sensors.
-\item Drive module: motor controllers, current sensors.
-\item Communication: Iridium, APRS, ZigBee.
-\item SD card memory.
-\item GPS module.
+\item Interne Messgeräte: Beschleunigungssensor, Gyroskop, Magnetometer, Präzisionsbarometer.
+\item Wettermodul: Temperatur, Barometer, Hygrometer, Anemometer (Winddruckmesser).
+\item Wissenschaftliches Instrument: pH-Sonde.
+\item Optisches Modul: Kamera, Distanzsensor.
+\item Antriebsmodul: Motorensteuerung, Stromflussmesser.
+\item Kommunikation: Iridium, APRS, ZigBee.
+\item SD-Speicherkarte.
+\item GPS Modul.
 \end{itemize}
 
-An auxiliary computer will take over if the main computer malfunctions. It will try to reset the main computer and if unsuccessful provide basic system functionality.
+Falls der Hauptcomputer ausfällt, würde ein zusätzlicher Hilfscomputer das Kommando übernehmen. Dieser würde versuchen, den Hauptcomputer neu zu starten, oder wenn dies nicht gelingt, das System mit seinen Grundfunktionen am Laufen zu halten.
 
 
+\subsection{Energieversorgung}
 
-\subsection{Power}
-
-The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ \cite{solarc} and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+|\phi|$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
+Die Sonnenenergie, die pro Quadratmeter auf die Erde trifft, ist $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ \cite{solarc} und $\alpha$ der Winkel zwischen den eintreffenden Sonnenstrahlen und der Horizontalen (siehe Abbildung \ref{sunrayangle}). Für die Antarktis können wir $\alpha \approx 23.5+90+|\phi|$ verwenden, um eine Abschätzung der maximal eintreffenden Sonnenenergie (d.h. im Sommer) an einem bestimmten geographischen Punkt zu erhalten, wobei $\phi$ der Breitengradswinkel ist.
 
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.6\textwidth]{sun}
-    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \caption{Veranschaulichung des Sonneneinstrahlungswinkel in einem bestimmten Breitengrad}
+    \label{sunrayangle}
 \end{figure}
 
+Dies würde am nördlichsten Punkt der Antarktis (bei 65\degree S) $1050 W/m^2$ und am Südpol (90\degree S) $545 W/m^2$ ergeben. Natürlich ist zu beachten, dass dieser Wert in den sechs Sommermonaten zwischen Null und dem eben berechneten Maximum schwankt \cite{pvedu}. Angenommen, unsere Panels sind horizontal ausgerichtet und unter Einbezug von aktuell gängigen Solarzellenwirkungsgraden (ca. 15-20\%) kann mit einer elektrischen Energieumwandlung von höchstens 200 W gerechnet werden. Mit einem eher schlechten Wirkungsgrad und einem geschätzten "Mittelwert" der Einstrahlung während den 6 Monaten der Mission (etwa die Hälfte des Maximumwertes) bräuchte es eine Solarzellenfläche von $0.13m^2$ (bei 65\degree S) bis zu $0.25m^2$ (bei 90\degree S) um 10 W elektrische Leistung zu erzielen. Diese Rechnung beinhaltet aber weder die tägliche Oszillation des Einstrahlungswinkel, noch die Tatsache, dass die Sonne in einigen Regionen zeitweise ganz verschwindet. Deshalb und auch weil die Intensität bei schlechtem Wetter abnimmt, sollte eher mit dem pessimistischen Wert von $0.25m^2$  gerechnet werden.
 
- This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated \cite{pvedu}. 
-Assuming our panels are installed horizontally and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
-
-To summarise, a panel surface of $0.25m^2$ will provide us with an average (seasonal, daily) power of 10W and these numbers are proportional. 
+Zusammenfassend gesagt ist eine Solarzellenfläche von ungefähr $0.25m^2$ genug, um den Roboter mit durchschnittlich 10 W elektrische Leistung zu versorgen und diese Werte sind zueinander proportional.
 
 
-\subsection{Thermal}
+\subsection{Heizung}
 
-The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on temperature thresholds listed below. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
+Höchste Priorität besteht darin, das System über -20\degree C zu halten, weshalb sämtliche Sonnenenergie und, wenn nötig, die Batterie zuerst für dieses Ziel verbraucht werden. Die Bordheizung ist deshalb direkt zwischen der Solarzelle und dem Batterienladegerät angeschlossen. Sie wird mittels elektronischen Komparatoren von der einen oder anderen Energiequelle betrieben, abhänging von der gemessenen Bordtemperatur. Der verwendete Batterieladeregler überwacht automatisch die empfohlenen Temperaturlimiten während des Aufladen und kann sich selbst an- und ausschalten.
 
 
-\subsection{Mechanical}
-The rover body design (fig. 5) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
+\subsection{Mechanik}
+
+Die Form des Roboters (Abb. \ref{cadmodel}) wurde nachhaltig durch die von der NASA entwickelten MUSES-CN Nanorover \cite{muses} beeinflusst. Das Design der Nanorover ist einzigartig und erlaubt eine fast uneigeschränkte Bewegungsfreiheit. Unser erster Entwurf von Octanis 1 ist leicht und besitzt eine genügend grosse Fläche um während der ganzen Mission ausreichend Solarenergie zu produzieren. Der Grundkörper (ohne Räder) misst ungefähr 30 cm x 30 cm 6 cm.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{conceptrover}
-    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \caption{Designkonzept für den Octanis Roboter, inspiriert durch MUSES-CN Nanorover}
+	\label{cadmodel}
 \end{figure}
 
-As depicted in figure 6, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a separate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
-Another benefit of this design is it allowing us to build a simpler drilling device. When drilling an ice core, the rover can lower itself to the ground exploiting its own weight as pressure onto the drill. The drill bit just needs to spin and doesn't need to retract into the rover body.
+Wie in Abbildung \ref{wheelconfig} gezeigt, kann sich der Roboter je nach Situation in unterschiedlicher Weise ausrichten und positionieren. Die Hauptprobleme der Mission werden Energieversorgung und Wetterfestigkeit sein, weshalb der ganze Roboter mit Solarzellen bedeckt ist und sich selbstständig auf- und je nach Sonnenstand ausrichten kann, so dass er ein Maximum seiner Fläche mit Sonnenlicht befluten lassen kann. Bei schlechtem Wetter muss sichergestellt sein, dass kein Schnee die Solarzellen bedeckt. Dies kann durch regelmässiges Umkehren des Roboters erreicht werden. \\
+Nicht nur Schnee, sondern auch Wind kann Probleme verursachen und manchmal den Roboter sogar auf den Kopf stellen. In diesem Fall kann er sich selbstständig wieder in eine stabile, fahrbare Position bringen indem er seine Räderstrebungen bewegt. Alle Streben können um eine gemeinsame Achse gedreht werden und werden je von einem separaten Motor betrieben. Um in Ruhelage keinen Strom zu verbrauchen, sind sie mit einem Schneckengetriebe an den Motor gekoppelt. \\
+Ein weiterer Vorteil dieses Designs besteht darin, dass der Einbau des Bohrwerkzeug vereinfacht wird. Beim Bohren einer Eisprobe senkt sich der Roboter bloss zum Boden herab und nutzt so sein eigenes Gewicht, um Druck auf den Bohrer auszuüben. Der Bohrkopf brauch nur zu rotieren und muss nicht in den Roboter hinein geführt werden.
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ c  c  c }
 \includegraphics[width=0.3\textwidth]{drive} & \includegraphics[width=0.25\textwidth]{upright} & \includegraphics[width=0.4\textwidth]{flat} \\
 \end{tabular}
-\caption{Different wheel strut configurations l.t.r.: (1) drive mode, (2) solar recharge mode, (3) wind protect mode.}
+\caption{Verschiedene Radstrebenpositionen v.l.n.r.: (1) Fahrmodus, (2) Solarlademodus, (3) Windschutzmodus.}
+	\label{wheelconfig}
 \end{figure}
 
 
-\subsection{Mobility}
-Snowy and icy terrain will be Octanis' main habitat and so its wheels need to be specifically designed to be wide, lightweight and should provide a good traction going upwards. 
-All four wheels will be individually motorised and provide enough torque to move Octanis on an inclination of 30 degrees. Turning can be achieved by rotating the wheels on each side at different speeds. 
+\subsection{Mobilität}
+Verschneites und eisiges Terrain wird Octanis' typisches Zuhause sein und deshalb müssen seine Räder speziell breit, leicht und mit einer grossen Aufwärts-Zugkraft konzipiert werden. Alle vier Räder sind separat motorisiert und erbringen ein genügend grosses Drehmoment, um Octanis eine Steigung von 30 Grad bewältigen zu lassen. Eine Drehung des Roboters kann durch unterschiedliche Rotationsgeschwindigkeiten der Räder auf beiden Seiten erreicht werden.
 
 \begin{figure}[h!]
 	\centering
@@ -316,12 +318,13 @@ All four wheels will be individually motorised and provide enough torque to move
     \caption{Initial wheel design. Fins allow the wheel to dig into the snow while driving providing better traction.}
 \end{figure}
 
+Ein Inertiale Messeinheit (engl. inertial measurement unit, IMU) wird verwendet, um jederzeit die Ausrichtung des Roboters zu kennen. Sie besteht aus einem Gyroskop, Beschleunigungssensor, Präzisionsbarometer und einem Magnetometer. Die Sensordaten werden dem Kontrollsystem mitgeteilt welches die Motoren steuert. Falls der Roboter ein Hindernis überwinden muss, werden die Radstreben so weit wie möglich rotiert so dass der Grundkörper immer parallel zum Boden ausgerichtet ist. Dies vermindert das Risiko umzukippen und sollte eine einache Umgehung von Hindernissen sein, die höher als der Radradius sind. Dieses System ist vergleichbar mit dem Rocker-Bogie Aufhängesystem der Mars-Rover von NASA \cite{rockerbogie}. Wegen des hohen Umsturzrisikos durch den Wind wurde nicht das passive Rocker-Bogie Design gewählt, weil dort keine Möglichkeit des einfachen Aufrichtens besteht.
 
-An inertial measurement unit (IMU) will be used to know the rovers orientation at any point in time. It consists of a gyroscope, accelerometer, precision barometer and magnetometer. The sensors information is fed back to the control systems that actuate the motors. Should the rover need to go over an obstacle, the wheel struts will be rotated as far as possible so that the rover body is always in a plane parallel to the ground. This minimises the risk of being tipped over and should allow the easy traversal of obstacles higher than the wheel radius and is similar to the rocker-bogie suspension system used on NASAs mars rovers \cite{rockerbogie}. Due to the high risk of overturn caused by wind gusts the passive rocker-bogie design was not chosen, since there would be no simple way of righting back up.
+Octanis' Maximalgeschwindigkeit beträgt schätzungsweise 100 cm/min. Ungeachtet der verfügbaren Menge an Energie ergibt dies eine Tagesreichweite von 1 km. Zwei unterschiedliche Modi werden verwendet: Discovery und Shortest Path. Im \textbf{Discovery Modus} wird der Roboter entweder eine vorprogrammierte Kreisfläche auf der Karte dicht durchfahren, oder bei einer Region mit einem ausserordendlichen Phänomen (z.B. einen hohen pH-Messwert). Der \textbf{Shortest Path Modus} bringt Octanis über den kürzesten Weg von Punkt zu Punkt. Beide Modi können kombiniert verwendet werden. Detektierte Hindernisse können als Markierung gespeichert werden um eine ungefähre Karte zu erstellen.
 
-Octanis' top speed is estimated to be at 100cm/min. Disregarding energy availability depending on weather, gives it a daily range of around 1km. There will be two driving modes: discovery and shortest path. \textbf{Discovery mode} will make the rover densely traverse either a preprogrammed circular area of a map or on detecting a certain phenomena (e.g. higher pH levels). \textbf{Shortest path} brings Octanis from waypoint to waypoint using the shortest path. Both methods can be used in combination. Detected obstacles can be stored as landmarks and help build a rough map.
 
 \subsection{Communication}
+
 Regular data transmission is a mission critical feature of the rover. It is achieved by using the Iridium Short Burst Data (SBD) service with the help of the RockBLOCK Iridium 9602 modem \cite{iridium}. This modem allows the transmission of data packets of up to 340 bytes outwards and 270 bytes inwards approximately every 20 seconds. Larger data frames can be fragmented and transmitted with multiple packets. The key to this modem and network is that is available everywhere on Earth at any time, something that cannot be said of the GSM network or even amateur radio. That the modem require just as low power as the GPS on board adds to the list of benefits. Information sent through the Iridium network is automatically sent to a server and uploaded to the project website, where the public can view Octanis' state and data.
 
 Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmitting sensor data and location information on the 2-meter band. This can be received by amateur radio operators (or unlicensed individuals with radio scanners) who are in range. The range of this transmitter is typically hundreds of kilometers when travelling in the sky (i.e. attached to a balloon). On the ground, the range is orders of magnitude smaller.
