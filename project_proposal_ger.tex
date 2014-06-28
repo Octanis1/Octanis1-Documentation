@@ -22,7 +22,7 @@
 \textsc{\Large Projektvorschlag}\\[0.5cm]
 
 % Title
-\huge \bfseries Octanis 1: Ein autonomer low-cost Roboter für die Antarktis mit satelitengestützter Datenübertragung \\[0.4cm] 
+\huge \bfseries Octanis 1: Ein autonomer low-cost Rover für die Antarktis mit satellitengestützter Datenübertragung \\[0.4cm] 
 
 \vspace{23pt}
 \includegraphics[width=0.25\textwidth]{black_logo} \\
@@ -54,35 +54,37 @@
 
 \section{Einführung}
 »octanis | discovery and exploration« \cite{octanis} ist ein ambitiöses und herausforderndes Projekt, initiiert durch eine interdisziplinäre Gruppe von Studenten. Octanis 1 ist unsere erste Mission mit dem Ziel, einen günstigen, autonomen Roboter zu bauen der sich in polaren, schnee- und eisbedeckten Regionen bewegen kann. In einem ersten Schritt spezialisieren wir den Roboter für Wetterbedingungen der küstennahen Gebiete der Antarktis. Der Roboter wird Daten wie Temperatur, Luftdruck, relative Luftfeuchtigkeit, aktuelle Position und Lage übertragen können. Optische Sensoren an Bord werden Hindernisse erkennen und Fotos der näheren Umgebung machen können. Weitere spezifischere Datensammlung ist durchaus möglich, muss aber wegen der Energie- und Platzbeschränkungen speziell geprüft werden. Beispiele dafür sind die Konzentration eines bestimmten Gases in der Atmosphäre, $\alpha, \beta, \gamma$ Strahlung oder die Entnahme von Schnee- oder Eisproben. \\
-Als eine geeignete erste wissenschaftliche Mission für Octanis 1 \cite{krishnakant} bestimmten wir die regelmässige Bodenentnahme von Schnee und Eis. Der Roboter wird mit einem kleinen holen Gerät ausgestattet sein, welches ihm ermöglicht, in die Oberfläche zu bohren, den Schnee oder das Eis zu schmelzen und schliesslich dessen pH-Wert bestimmen.\\ 
-Die Energie für Octanis liefern die Solarzellen auf seiner Oberfläche, welche die Sonnenenergie in Strom umwandeln und in einer Batterie speichern können. Dank dem Irdium Satelitennetzwerk \cite{iridium}, welches eine günstige, energieeffiziente und zuverlässige Datenübertragung bereitstellt, ist es uns möglich, mit dem Roboter in einem beliebigen Punkt der Erde zu kommunizieren.
+Als eine geeignete erste wissenschaftliche Mission für Octanis 1 \cite{krishnakant} bestimmten wir die regelmässige Bodenentnahme von Schnee und Eis. Der Roboter wird mit einem kleinen Bohrkopf ausgestattet sein, welches ihm ermöglicht, in die Oberfläche zu bohren, den Schnee oder das Eis zu schmelzen und schliesslich dessen pH-Wert bestimmen.\\ 
+Die Energie für Octanis liefern die Solarzellen auf seiner Oberfläche, welche die Sonnenenergie in Strom umwandeln und in einer Batterie speichern können. Dank dem Iridium Satellitennetzwerk \cite{iridium}, welches eine günstige, energieeffiziente und zuverlässige Datenübertragung bereitstellt, ist es uns möglich, mit dem Roboter jedem Punkt der Erde zu kommunizieren.
 
 
 \section{Überblick}
 
-Das Ziel der Mission Octanis 1 ist eine günstige Roboterplatform zur Verfügung zu stellen, welche nur kleine Auswirkungen auf die Umwelt hat und sich für wissenschaftliche Experimente in einer sehr kalten Umgebung eignet. Der Roboter wird so klein und leicht sein, dass er mit einem Wetterballon transportiert werden kann und seine Bauweise ermöglicht es ihm, eisiges Terrain zu durchqueren und gleichzeitig windresistent zu sein. Dank Solarzellen wird er alle nötige Energie selbst generieren und kann somit seine interne Temperatur regulieren, was sich als überlebenswichtig herausstellt. Die Platform des Roboters bekommt vier Räder, die allesamt ????????????????????????... being on a controllable strut, allowing it to drive in any orientation and right itself should it flip over. 
+Das Ziel der Mission Octanis 1 ist eine günstige Roboterplatform zur Verfügung zu stellen, welche nur kleine Auswirkungen auf die Umwelt hat und sich für wissenschaftliche Experimente in einer sehr kalten Umgebung eignet. Der Roboter wird so klein und leicht sein, dass er mit einem Wetterballon transportiert werden kann und seine Bauweise ermöglicht es ihm, eisiges Gelände zu durchqueren und gleichzeitig windresistent zu sein. Dank Solarzellen wird er alle nötige Energie selbst generieren und kann somit seine interne Temperatur regulieren, was sich als überlebenswichtig herausstellt. Die Platform des Roboters bekommt vier Räder, die allesamt 
+
+*****????????????????????????... being on a controllable strut, allowing it to drive in any orientation and right itself should it flip over. 
 
 
 \subsection{Ziele}
 
 \paragraph{Robotik}
-Es soll ein allwettertauglicher Leichtbauroboter entstehen mit einem einfachen, aber robusten Hardware- und Softwaredesign. Der Roboter muss die Mission grösstenteils autonom zu Ende führen können mit Hilfe nur da wo sie nötig ist. Eine Mission enthält einen abzufahrenden Pfad und auszuführende Messungen. Über das Internet können Abbruch- oder Hilfskommandos zum Roboter gesendet werden. Das interne Kraftwerk soll dem Roboter genügend Energie liefern damit er eine Mission während mehrerer Monate ohne menschliches Zutun ausführen kann.
+Es soll ein allwettertauglicher Leichtbauroboter entstehen mit einem einfachen, aber robusten Hardware- und Softwaredesign. Der Roboter muss die Mission grösstenteils autonom zu Ende führen können mit Eingriffen nur da wo sie nötig sind. Eine Mission enthält einen abzufahrenden Pfad und auszuführende Messungen. Über das Internet können Unterbrech- oder Hilfskommandos zum Roboter gesendet werden. Energie soll so erzeugt und gespeichert werden um dem Roboter zu ermöglichen eine Mission während mehrerer Monate ohne menschliches Zutun ausführen zu können.
 
 \paragraph{Sensorik}
-An Bord des Roboters befinden sich Messgeräte, welche regelmässig den Status der inneren und äusseren Umgebung speichern und übertragen können. Die standardisierten Schnittstellen werden es ermöglichen, wissenschaftliche Instrumente einfach ein- und auszubauen. Sämtliche übertragene Daten von und zum Roboter werden öffentlich in Echtzeit im Internet abrufbar sein. Eine spezifische Schnittstelle wir des ihm erlauben, mit zukünftigen Roboter in einem Sensornetzwerk zu kommunizieren und als Schwarm funktionnieren.
+An Bord des Roboters befinden sich Messgeräte, welche regelmässig den Status der inneren und äusseren Umgebung speichern und übertragen können. Die standardisierten Schnittstellen werden es ermöglichen, wissenschaftliche Instrumente einfach ein- und auszubauen. Sämtliche übertragenen Daten von und zum Roboter werden öffentlich in Echtzeit im Internet abrufbar sein. Eine spezifische Schnittstelle wird es ihm erlauben, mit zukünftigen Robotern in einem Sensornetzwerk zu kommunizieren und als Schwarm zu funktionieren.
 
-\paragraph{>>>>>>>>> gutes Deutsches Wort für Deployment. (Landung, Abwurf, Stationierung)?}
-Es stehen verschiedene Möglichkeiten zur Verfügung, den Roboter in die Antarktis zu befördern, deren Kosten und Risiken noch abzuwägen sind.
+\paragraph{Deployment}
+Es werden verschiedene Möglichkeiten den Roboter in die Antarktis zu befördern evaluiert, deren Kosten und Risiken abzuwägen sind.
 
 
 
 \paragraph{Offen \& Reproduzierbar} 
-Wir bauen Octanis in Anlehnung an die Open Source Bewegung. Sämtliche Dokomentation, Software und 3D-Modelle sind auf unserer Website zum Download verfügbar, so dass sie jede(r) wiederverwenden, verändern und verbessern kann. Wir verwenden, wo immer möglich, einfach zu beschaffende Bauteile damit jede(r) mit den nötigen Kenntnissen seine/ihre eigene Version von Octanis bauen kann. Von uns verwendete Fabrikationstechniken wie 3D-Druck sind mehr und mehr verbreitet und stehen in sogenannten Fab Labs \cite{fablab} oder Hackerspace \cite{hackerspace} einem breiten Publikum für wenig Geld zur Verfügung.
+Wir bauen Octanis in Anlehnung an die Open Source Bewegung. Sämtliche Dokumentation, Software und 3D-Modelle sind auf unserer Website zum Download verfügbar, so dass sie jede(r) wiederverwenden, verändern und verbessern kann. Wir verwenden, wo immer möglich, einfach zu beschaffende Bauteile damit jede(r) mit den nötigen Kenntnissen seine/ihre eigene Version von Octanis bauen kann. Von uns verwendete Fabrikationstechniken wie 3D-Druck sind mehr und mehr verbreitet und stehen in sogenannten Fab Labs \cite{fablab} oder Hackerspace \cite{hackerspace} einem breiten Publikum für wenig Geld zur Verfügung.
  
 
 \subsection{Zeitplan}
 
-Hier genannte Daten gelten für das Jahr 2014 falls nicht anders deklariert. Die genauen Daten für die wissenschaftliche Mission werden noch in Übereinstimmung mit der kooperierenden Antarktisbasis bestimmt. Das Projektmanagement wird transparent und agil geführt und der Entwicklungsprozess ist sehr zyklisch damit kleine Änderungen sofort mit eingebaut werden können wenn sie nötig werden. Diese Methode konnte sich in der Vergangenheit als erfolgreich beweisen weil Fehler schnell korrigiert und die Kosten tief gehalten werden konnten. Transparenz wird dadurch geschaffen, dass die gesamte Dokumentation auf unseren öffentlichen GitHub \cite{octanisgithub} Repositories vorhanden ist.
+Hier genannte Daten gelten für das Jahr 2014 falls nicht anders deklariert. Die genauen Daten für die wissenschaftliche Mission werden noch in Übereinstimmung mit der kooperierenden Antarktisbasis bestimmt. Das Projekt wird transparent und agil geführt und der Entwicklungsprozess ist zyklisch damit Änderungen sofort mit eingebaut werden können wenn sie nötig werden. Diese Methode konnte sich in der Vergangenheit als erfolgreich beweisen weil Fehler schnell korrigiert und die Kosten tief gehalten werden konnten. Transparenz wird dadurch geschaffen, dass die gesamte Dokumentation auf unseren öffentlichen GitHub \cite{octanisgithub} Repositories vorhanden ist. %TODO: mention live-reporting and blogging here%
 
 \begin{table}[h!]
 \centering
@@ -97,14 +99,14 @@ B2 & Testfahrt \& Bohrtests auf Schweizer Gletscher & 14.10. - 14.11. & 4 \\
 D & Mechanische Stresstests & 14.11. - 21.12. & 1 \\
 E & Tests Energiemanagement & 21.11. - 14.12. & 3 \\
 F & Fallschirmtests & 14.12. - 21.12. & 1 \\
-0.1 & Abwurfmöglichkeit in der Antarktis & 14.2.2015 &  1 \\
-0.2 & Abwurfmöglichkeit in der Antarktis & 1.12.2015 &  1 \\
+0.1 & Mögliches Deployment in der Antarktis & 14.2.2015 &  1 \\
+0.2 & Mögliches Deployment in der Antarktis & 1.12.2015 &  1 \\
 
 \end{tabular}
 \caption{Zeitplan Entwicklungsphasen}
 \end{table}
 
-Nach dem Abwurf des Roboters in die Antarktis wird das Wissenschaftsprojekt wie in der folgenden Tabelle beschrieben weitergeführt. Zu beachten ist, dass während der gesamten Mission eine Satelitenverbindung zum Roboter besteht, womit mehrmals täglich Statusinformationen und Messdaten übertragen werden. Um den Verlauf der Mission zu beeinflussen können jederzeit Kommandos gesendet werden.
+Nach dem Abwurf des Roboters in die Antarktis wird das Wissenschaftsprojekt wie in der folgenden Tabelle beschrieben weitergeführt. Zu beachten ist, dass während der gesamten Mission eine Satellitenverbindung zum Roboter besteht, womit mehrmals täglich Statusinformationen und Messdaten übertragen werden. Um den Verlauf der Mission zu beeinflussen können jederzeit Kommandos gesendet werden.
 
 
 \begin{table}[h!]
@@ -113,16 +115,16 @@ Nach dem Abwurf des Roboters in die Antarktis wird das Wissenschaftsprojekt wie 
 \bfseries{Code} & \bfseries{Projektphase} & \bfseries{Wochen} \\
 \hline
 
-0 & Abwurf & 1 \\
+0 & Deployment & 1 \\
 1 & Check der Systeme & 1 \\
-2 & Fahrt und Probeentnahme & 3 \\
+2 & Fahrt und Probenentnahme & 3 \\
 3 & Kameratests \& Bildübertragung & 3 \\
 4 (*)& Test der Amateurfunk-Datenübertragung  & 3 \\
 
 \end{tabular}
 \caption{Zeitplan Wissenschaftsprojekt}
 
-*Je nach Abwurfort des Roboters könnte Funkkontakt zur Antarktisbasis bestehen. 
+*Je nach Abwurfort des Roboters variiert der Funkkontakt zur Antarktisbasis. 
 
 \end{table}
 
@@ -140,7 +142,7 @@ Wir sind eine Gruppe Studenten, die ihre Fähigkeiten bis an ihre Grenzen heraus
     \centering
     \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{sam}
-\end{wrapfigure} besitzt sieben Jahre Arbeitserfahrung als Programmierer und Kommunikationsnetzwerkingenieur. Seit jungen Jahren tüftelt er mit Microcontrollern und Elektronik herum und wird sicherstellen, dass Octanis' Gehirn korrekt funktionniert.
+\end{wrapfigure} besitzt sieben Jahre Arbeitserfahrung als Programmierer und Network Engineer. Seit jungen Jahren tüftelt er mit Mikrokontrollern und Elektronik herum und wird sicherstellen, dass Octanis' Gehirn korrekt funktionniert.
 \\ \\
 
 \begin{wrapfigure}{l}{0.2\textwidth}
@@ -156,7 +158,7 @@ Wir sind eine Gruppe Studenten, die ihre Fähigkeiten bis an ihre Grenzen heraus
      \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{raf}
 \end{wrapfigure} 
-\paragraph{Raffael Tschui} besitzt einen Bachelor in Elektrotechnik der EPFL und kümmert sich um die lebenswichtige Energieversorgung und  -verwaltung des Roboters. Im Moment arbeitet er zusammen mit einem EPFL Professor an einem Projekt in Kolumbien, in dem er beim Bau eines wasserreinigenden Bioreaktor mitwirkt.  
+\paragraph{Raffael Tschui} besitzt einen Bachelor in Elektrotechnik der EPFL und kümmert sich um die lebenswichtige Energieversorgung und -verwaltung des Roboters. Im Moment arbeitet er zusammen mit einem EPFL Professor an einem Projekt in Kolumbien, in dem er beim Bau eines wasserreinigenden Bioreaktor mitwirkt.  
 \\ \\
 
 \begin{wrapfigure}{l}{0.2\textwidth}
@@ -170,9 +172,10 @@ Wir sind eine Gruppe Studenten, die ihre Fähigkeiten bis an ihre Grenzen heraus
 
 \subsection{Budget}
 
-Tabelle \ref{tabbudget} listet die geplanten Kosten auf mit einer Toleranz von $\pm 20\%$ (krit. = Missionskritisch). \\ 
+Tabelle 3 listet die geplanten Kosten auf mit einer Toleranz von $\pm 20\%$ (krit. = Missionskritisch). \\ 
 
 \begin{table}[h!]
+
 \centering
 \begin{tabular}{ l | c || r }
   Beschreibung & Priorität & Einmalige Kosten \\
@@ -187,40 +190,39 @@ Tabelle \ref{tabbudget} listet die geplanten Kosten auf mit einer Toleranz von $
   & & kritisch: 3700 CHF  \\
   & & optional: 1500 CHF \\
 \end{tabular}
-\label{tabbudget}
 \caption{Allgemeines Budget.}
 \end{table}
 
-Die einzigen wiederkehrenden Kosten werden von der Irdium Satelitenübertragung \cite{iridium} verursacht. Diese reichen von 0.04-0.12 GBP pro Nachricht (340 bytes) zuzüglich der Verbindungsmiete von 8 GBP pro Monat. Der Preis einer Nachricht hängt von der Anzahl benötigten Nachrichten ab.
+Die einzigen wiederkehrenden Kosten werden von der Iridium Satellitenübertragung \cite{iridium} verursacht. Diese reichen von 0.04-0.12 GBP pro Nachricht (340 bytes für ausgehende Nachrichten) zuzüglich der Verbindungsmiete von 8 GBP pro Monat. Der Preis einer Nachricht hängt von der Anzahl benötigten Nachrichten ab.
 
 
 
-\section{Rover Transportation and Deployment}
+\section{Rover Transport und Deployment}
 
-Octanis 1 is a light-weight rover meaning its total mass will not exceed 2.5kg. Thanks to this there are multiple cost-effective deployment options available which are listed below:
+Octanis 1 ist ein Leichtbau-Roboter mit einem Endgewicht von nicht mehr als 2.5kg. Dank dieser Bauweise kommen mehrere kosteneffiziente Deployment-Methoden in Frage, die hier aufgeführt sind: 
 
-\subsection{Methods of deployment}
+\subsection{Deployment-Methoden}
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.4\textwidth]{trajectory}
-    \caption{HYSPLIT trajectory simulation starting in Rio Grande, Argentina.}
+    \caption{HYSPLIT trajectory simulation starting in Rio Grande, Argentina.} %TODO%
 \end{figure}
 
-\paragraph{High Altitude Balloons} or more commonly known, weather balloons, can be used to bring the rover to its target destination. Helium-filled, they typically float up to an altitude of 30km and a trajectory of hundreds of kilometers can be achieved. However the path of the balloon cannot be controlled and relies on rigorous pre-flight simulations with the HYSPLIT simulation software \cite{hysplit} \cite{hysplitjava}. This is the cheapest method to deploy the rover to Antarctica as it is only required to travel to lower South America, to which commercial flights exist, to launch the rover attached to the balloon. With this benefit comes a higher risk of deployment failure. Even with precise weather models, the weather could suddenly change and move the balloon off its path. That being said, HYSPLIT was already successfully used in numerous ballooning projects like Piccard and Jones' Breitling-Orbiter 3 \cite{hysplitexamples}.
-Once the balloon-rover-configuration have reached their target destination, the rover is separated from the balloon and parachutes to the ground. The balloon continues on uncontrolled and will eventually burst or float to the ground after the helium diffuses out.
+\paragraph{Stratosphären-Ballons} auch als Wetterballone bekannt, können benutzt werden um den Roboter zu seinem Zielort zu transportieren. Helium-gefüllt erreichen diese Ballone normalerweise eine Höhe von 30km und können hunderte von Kilometer überwinden. Allerdings kann der Pfad des Ballons nicht beeinflusst werden und setzt eine gute und ausgiebige Flugpfad-Simulation voraus. Diese Simulationen können mit der HYSPLIT Simulationssoftware \cite{hysplit} \cite{hysplitjava} durchgeführt werden. Das ist eine günstigste Methode um den Rover in der Antarktis zu deployen, denn man braucht nur in den südlichste Region Südamerikas zu reisen, wo kommerzielle Fluggesellschaften hinfliegen. Von dort kann man den Ballon auf einen Luftpfad bringen, der in die Antarktis führt. Mit all den Vorteilen kommt ein höheres Risiko, dass das Deployment nicht funktioniert. Auch mit guten Wettermodellen, bleibt das Wetter unberechenbar und eine plötzliche Änderung könnte den Ballon vom Pfad abbringen. HYSPLIT wurde aber schon erfolgreich in anderen Ballon-Projekten eingesetzt wie z.B. beim Breitling-Orbiter 3 Projekt von Piccard und Jones \cite{hysplitexamples}.
+Sobald der Ballon über dem Ziel schwebt kann der Roboter abgetrennt werden, welcher mit dem Fallschirm landet. Der Ballon wird danach unkontrollierbar weiterschweben bis er platzt oder aber auf die Erde zurückfällt nachdem das Helium herausdiffundiert.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{lowcostchute}
-    \caption{Depicted is one of our self-built, low-cost parachutes during a test. }
+    \caption{Ein von uns produzierter low-cost Fallschirm im Test. }
 \end{figure}
 
 
-\paragraph{Helicopter} - a method to consider is to deploy Octanis out of a helicopter which is already on a specific route. The rover could be given to one of the passengers or attached to the transport cord and detached on demand. Similar to balloon deployment, Octanis would swiftly parachute to the ground and begin its mission.
+\paragraph{Helikopter} - eine etwas andere Art Octanis zu deployen ist mit einem Helikopter der eine feste Route fliegt (Personen- oder Warentransport) fliegt. Der Roboter könnte einem Passagier gegeben werden oder an die Transportleine des Helikopters befestigt werden um ihn im Flug abzuwerfen. Gleich wie bei der Ballonmethode schwebt Octanis mit einem Fallschirm zu Boden und kann seine Mission beginnen.
 
 
-\paragraph{Manual} deployment is suggested when costs and risk need to be as low as possible. This is by far the easiest method and just means going to the desired location and setting the rover down. Octanis continues on by its own and can return to the set-down location.
+\paragraph{Manuelles} deployment ist empfohlen wenn Kosten und Risken so tief wie möglich gehalten werden sollen. Das ist die einfachste Methode den Roboter zu seinem Erkundungsort zu bringen, denn man muss ihn einfach selber dorthin bringen. Typischerweise direkt bei der Basis oder ein paar Kilometer entfernt. Octanis kann seine Mission beginnen und zum Startort zurückfahren.
 
 
 
