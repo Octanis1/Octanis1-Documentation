@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{fullpage}
++\usepackage[nspanish]{babel}
 \graphicspath{ {project_proposal_img/} }
  
 
@@ -19,10 +20,10 @@
 % only works if a paragraph has started.
 \includegraphics[width=0.35\textwidth]{patch}~\\[2cm]
 
-\textsc{\Large Project Proposal}\\[0.5cm]
+\textsc{\Large Propuesta de Proyecto}\\[0.5cm]
 
 % Title
-\huge \bfseries Octanis 1:Robot explorador autónomo con transmisión de datos via satélite en tiempo real de bajo presupuesto para la Antártida \\[0.4cm] 
+\huge \bfseries Octanis 1: Unidad Robótica Autónoma Exploradora y Sistema de Transmisión de Datos vía Satélite en Tiempo Real de Bajo Presupuesto para la Antártida \\[0.4cm] 
 
 \vspace{23pt}
 \includegraphics[width=0.25\textwidth]{black_logo} \\
@@ -38,10 +39,10 @@
 \centering
 \vspace{1pt}
 \begin{tabular}{ l  l  l }
-	\textbf{Rev.} & \textbf{Changes} & \textbf{Authors} \\
-	25.6.14 & Initial proposal & Sam Sulaimanov, Raffael Tschui, Ana Roldán, Pamela Canjura \\
-	27.6.14 & Spanish version & Ana Roldán \\
-	27.6.14 & German version & Raffael Tschui \\
+	\textbf{Rev.} & \textbf{Traducciones} & \textbf{Autores} \\
+	25.6.14 & Propuesta Inicial & Sam Sulaimanov, Raffael Tschui, Ana Roldán, Pamela Canjura \\
+	27.6.14 & Versión en español & Ana Roldán \\
+	27.6.14 & Versión en alemán & Raffael Tschui \\
 \end{tabular}
 \end{table}
 
@@ -52,82 +53,83 @@
 
 \pagebreak
 
-\section{Introduction}
-»octanis | discovery and exploration« \cite{octanis} is a student initiative to embark on ambitious and challenging projects together as multi-disciplinary students. Octanis 1 is our first mission to build a low-cost autonomous rover for polar, snow or ice covered regions. In this first iteration we will be specialising the rover for the coastal regions of Antarctica and its specific weather conditions. The rover will transmit sensor data like temperature, air pressure, relative humidity, current position and pose. There will be optical instruments on-board as well to sense obstacles and take pictures of the environment in its close vicinity. Other more specific environmental data collection is possible, but needs to be specially addressed due to the non-negligible power and weight requirements. These could be the concentration of an atmospheric gas, $\alpha, \beta, \gamma$ radiation levels or snow and ice sampling. \\ We have selected the periodic sampling of snow and ice to be the most suitable initial science mission for Octanis 1 \cite{krishnakant}. The rover will have a small hollow device capable of drilling into the surface ice or snow, melting the sample and analysing the pH.
-\\ Energy will be provided by the solar panels on Octanis' surfaces and used throughout the Antarctic summer in combination with a battery pack. Communications will go through the Iridium satellite network \cite{iridium}, providing a low cost, low power and reliable data transmission at any location on Earth. 
+\section{Introdución}
+»octanis | exploración y descubrimiento« \cite{octanis}  es una iniciativa estudiantil que nos embarca en un ambicioso y desafiante proyecto como un equipo de estudiantes de diferentes disciplinas. Octanis 1 es nuestra primera misión, enfocada en la exploración con un robot autónomo adaptado a las condiciones polares. La primera fase se enfoca en especializar y adaptar al robot para la exploración de las regiones costeras de la Antártida y sus condiciones climáticas específicas. El robot transmitirá los datos obtenidos a través de los sensores, como la temperatura, presión atmosférica, humedad relativa, la posición actual y la altitud. Contará con instrumentos ópticos a bordo, para guiarse, evitar obstáculos y tomar fotografías del medio ambiente y su cercanías. La recopilación de otros datos ambientales es posible, pero hay que tener en cuenta que la mayor parte del sistema esta especializado para optimizar la potencia necesita por Octanis y el limite de peso establecido. Entre los datos que podemos recopilar están las concentraciones de distintos gases en la atmósfera, los niveles de radiación $\alpha, \beta, \gamma$ o muestras de hielo y nieve. \\ Hemos seleccionado el muestro periódico de hielo y nieve para la misión científica inicial de Octanis 1 \cite{krishnakant}. El robot contara con un dispositivo capaz de perforar la superficie del hielo, derretir la muestra y analizar el pH de esta.
+\\ La energía será sub-ministrada por los paneles solares en la superficie de Octanis durante el verano Antártico en combinación con un paquete de baterías. Para la comunicación se usará la red de satélites de Iridio \cite{iridium}, lo que además de disminuir el presupuesto, nos dará bajo consumo de energía y transmisión de datos fiable en cualquier lugar de la Tierra. 
 
 
 
-\section{Mission Overview}
+\section{Resumen de la Misión}
 
-The aim of this mission, Octanis 1, is to provide a low-cost, low environmental impact rover platform for scientific experiments in cold to extremely cold environments. The rover will be small and light-weight enough to be carried on weather balloons. Its design will allow it to traverse icy terrain and be resistant to wind gusts. It will generate its own power with solar panels and regulate internal temperature as it's first priority. The rover will be on a four-wheel drive platform, each wheel being on a controllable strut, allowing it to drive in any orientation and right itself should it flip over. 
-
-
-\subsection{Objectives}
-
-\paragraph{Robotics}
-A weather-proof, cold-resistant and light-weight rover shall be built that has a simple but solid hardware and software design. The rover must be able to complete a mission autonomously with assistance where necessary. A mission contains a movement path and sensing actions to be executed. Interrupting or aiding commands to be executed by the rover can be sent via the Internet to the rover. Energy generation and storage shall be dealt with in such a way that a mission can continue for several months without human interception.
-
-\paragraph{Sensing}
-The rover shall carry sensors on board to regularly record and transmit the state of the external and internal environment in a given location. It should provide a standard interface so that scientific instruments can be embedded and exchanged in a simple manner. All data transmitted to and from the rover shall be publicly available on the Internet in real-time. The rover shall have an interface to participate in a wider spread sensor network so that future rovers can work as a swarm.
-
-\paragraph{Deployment}
-Various methods of deploying the rover, long and short range, shall be evaluated and compared. Their costs and risks shall be weighed.
+El objetivo de la misión Octanis 1, es construir una unidad robótica autónoma, mobil, de bajo presupuesto, y de bajo impacto ambiental que sea capaz explorar ambientes inhóspitos y realizar experimentos e investigaciones científicas y transmitir los datos obtenidos en tiempo real. El rover será pequeño y ligero, lo suficiente como para ser transportado en globos meteorológicos. Su diseño le permitirá transitar superficies congeladas y ser resistentes a las ráfagas de viento. Generará su propia energía a través de paneles solares y auto-regular su temperatura interna, con el fin de optimizar el consumo de energía. El rover será en una plataforma de tracción en cuatro ruedas, cada rueda estará conectada a un eje independiente, dando libertad absoluta de movimiento y orientación, incluso, levantarse para girar por completo.
 
 
-\paragraph{Open \& Reproducible} 
-We are building Octanis based on the principles of the open source movement. All documentation, software and 3D models are available on our website for anyone to download, re-use and modify or even contribute. We use off-the-shelf parts where possible so that anyone with sufficient skills can build their own version of Octanis. We use fabrication techniques, like 3D printing, available to anyone having access to a workshop, fab lab \cite{fablab} or hackerspace \cite{hackerspace}. Access to these infrastructures is in many places available to everybody and at a low cost.
+\subsection{Objetivos}
+
+\paragraph{Robótica}
+Su hardware y software están construidos de manera simple pero funcional, resultado de una rigurosa optimización de diseño que siendo ligera resiste el frío polar, las tormentas de viento,  y la presencia del agua. El robot será capaz de cumplir misiones de manera autónoma, con minima asistencia humana. El recorrido de la misión será pre-programado, usando los sensores para realizar un recorrido optimizado y evitar obstáculos. Los comandos de interrupción o ayuda podrán ser enviados al robot via satélite. La generación y almacenamiento de energía esta implementada de manera que la misión pueda continuar por varios meses sin intercepción humana. 
+
+\paragraph{Sensores}
+El robot llevará sensores a bordo capaces de registrar y transmitir regularmente el estado del medio ambiente externo e interno de un lugar determinado. Cuenta con una interfaz estándarizada para que los instrumentos científicos sean faciles de colocar e intercambiar. Todos los datos transmitidos hacia y desde el robot se pondrán a disposición del público en Internet en tiempo real. El robot tendrá una interfaz que se conectara a una red de sensores de amplia difusión  con el fin de que los robots de misiones futuras pueden trabajar como un enjambre.
+
+\paragraph{Despliegue}
+Varios de los métodos de despliegue del robot, tanto de largo como de corto alcance, se evaluarán y compararán. Sus costos y riesgos deberán aquilatarse.
+
+
+\paragraph{Libre \& Reproducible} 
+Estamos construyendo Octanis basado en los principios del movimiento de código abierto. Todos los modelos de documentación, software y los modelos en 3D están disponibles en nuestro sitio web para que cualquiera los pueda descargar, reutilizar, modificar y/o contribuir. Tratamos de utilizar piezas genéricas, tanto como podamos, para que cualquier persona con los conocimientos necesarios pueda construir su propia versión de Octanis. Usamos también como técnica de fabricación, la impresión 3D, disponible para cualquiera con acceso a un taller, un fab lab \cite{fablab} o un hacklab \cite{hackerspace}. El acceso a estas infraestructuras esta disponible para cualquiera con un bajo presupuesto.
  
 
-\subsection{Schedule}
+\subsection{Programa}
 
-Dates are for the year 2014 if not otherwise stated. The detailed dates for the science mission is to be determined in coordination with the collaborating Antarctic base. The project is managed transparently and in an agile manner and the development is strictly cyclic as to quickly incorporate urgent features as their need emerges. This method has worked well in the past and has proven to enable fast response to bugs and keep the costs low. Transparency is provided by opening all documentation to the public via GitHub \cite{octanisgithub} repositories. 
+Las fechas están programadas para ser ejecutadas en el 2014, a menos que se nos indique lo contrario. Las fechas detalladas para la misión científica se determinarán en coordinación con el Instituto Antártico colaborador. El proyecto se gestionan de manera ágil y transparente y su desarrollo es estrictamente cíclico con la finalidad de incorporar rápidamente modificaciones o mejoras si la necesidad se presenta. Este método ha funcionado efcientemente, dando buenos resultados en el pasado y ha mostrado dar  respuesta inmediata a los errores, manteniendo al mismo tiempo el bajo costo.
+Toda la documentación es publica a través de GitHub, mostrando la absoluta transparencia del proyecto \cite{octanisgithub}. 
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{ l | l | l | c }
 
-\bfseries{Code} & \bfseries{Mission Phase} & \bfseries{Dates} & \bfseries{Weeks} \\
+\bfseries{Código} & \bfseries{Fases de la Misión} & \bfseries{Fechas} & \bfseries{Semanas} \\
 \hline
-A1 & Prototype Design \& Development & 1.6. - 1.10. & 12 \\
-A2 & Software Development & 1.6. - 1.10. & 12 \\
-B1 & Initial Testing & 1.10. - 14.10. & 2  \\
-B2 & Drive \& Sampling Testing on Swiss Glacier & 14.10. - 14.11. & 4 \\
-D & Mechanical Stress Testing & 14.11. - 21.12. & 1 \\
-E & Energy Management Testing & 21.11. - 14.12. & 3 \\
-F & Parachute Deployment Testing & 14.12. - 21.12. & 1 \\
-0.1 & Deployment Opportunity in Antarctica & 14.2.2015 &  1 \\
-0.2 & Deployment Opportunity in Antarctica & 1.12.2015 &  1 \\
+A1 & Diseño del Prototipo \& Desarrollo & 1.6. - 1.10. & 12 \\
+A2 & Desarrollo de Software & 1.6. - 1.10. & 12 \\
+B1 & Pruebas Iniciales & 1.10. - 14.10. & 2  \\
+B2 & Unidad \& Toma de Muestras en el Glaciar Suizo & 14.10. - 14.11. & 4 \\
+D & Prueba de Esfuerzo Mecánico  & 14.11. - 21.12. & 1 \\
+E & Pruebas de Gestión Energética & 21.11. - 14.12. & 3 \\
+F & Pruebas de Aterrizaje con Paracaídas & 14.12. - 21.12. & 1 \\
+0.1 & Despliegue en la Antártida  & 14.2.2015 &  1 \\
+0.2 & Despliegue en la Antártida  & 1.12.2015 &  1 \\
 
 \end{tabular}
-\caption{Development timeline.}
+\caption{Linea de Tiempo del Despliegue.}
 \end{table}
 
-After deployment, the schedule of the science mission will proceed as described in the following table. Note that during the whole mission there will be a constant satellite data connection to the rover. Basic heartbeat information and sensory data will be transmitted multiple times per day. Commands to intercept the mission progress can be sent at any time.
+Después del despliegue, el programa a seguir de la misión científica procederá tal y como se describe en la siguiente tabla. Hay que tener en cuenta que durante toda la misión habrá una conexión constante de datos vía satélite en tiempo real con el robot. La información sobre el estado del robot y los datos sensoriales se transmitirán múltiples veces por día. Los comandos para interrumpir el progreso de la misión se podrán enviar en cualquier momento.
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{ l | l | c }
-\bfseries{Code} & \bfseries{Mission Phase} & \bfseries{Weeks} \\
+\bfseries{Código} & \bfseries{Fases de la Misión} & \bfseries{Semanas} \\
 \hline
 
-0 & Deployment & 1 \\
-1 & All Systems Check & 1 \\
-2 & Drive \& Sample & 3 \\
-3 & Camera Test \& Image Transmission & 3 \\
-4 (*)& Testing of Amateur Packet Radio Transmission  & 3 \\
+0 & Despliegue & 1 \\
+1 & Chequeo y Comprobación de los Sistemas & 1 \\
+2 & Unidad \& Muestreo & 3 \\
+3 & Prueba de Cámara \& Transmisión de Imágenes  & 3 \\
+4 (*)& Pruebas de Transmisión de Radio Amateur  & 3 \\
 
 \end{tabular}
-\caption{Science Mission timeline.}
-*Depending on the deployment location and Antarctic base station radio capabilities.
+\caption{Linea de Tiempo de la Misión Científica.}
+*Dependiendo de la ubicación y las estaciones de la base antártica, y la capacidad del despliegue radial.
 
 \end{table}
 
 \pagebreak
 
-\subsection{Team}
+\subsection{Equipo de Trabajo}
 
-We are a group of students willing to challenge ourselves to the limit. Octanis 1 will not only be built by us, but with many helping professors and advisors that we will meet along the course of the mission. The following presentation is therefore one of the core team:
+Somos un grupo de estudiantes dispuestos a desafiar nuestros límites. Octanis 1 será construido por nosotros mismos, pero también contaremos con la ayuda y asesoramiento de profesores, consejeros y expertos que hemos conocido y conoceremos a lo largo del transcurso de la misión. Por lo tanto, a quienes les presentaremos a continuación son el equipo principal:
 
 
 \paragraph{Sam Sulaimanov} 
@@ -135,7 +137,7 @@ We are a group of students willing to challenge ourselves to the limit. Octanis 
     \centering
     \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{sam}
-\end{wrapfigure} has seven years of experience working as a programmer and communications network engineer. He has been working with microcontrollers and electronics since he was a little boy and will make sure Octanis' brain functions correctly.
+\end{wrapfigure} tiene siete años de experiencia trabajando como programador e ingeniero en redes y  telecomunicación. Él ha estado trabajando con microcontroladores y sistemas electrónicos desde que era un niño y se encargará de que las funciones cerebrales de Octanis trabajen a la perfección.
 \\ \\
 
 \begin{wrapfigure}{l}{0.2\textwidth}
@@ -143,7 +145,7 @@ We are a group of students willing to challenge ourselves to the limit. Octanis 
     \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{ana}
 \end{wrapfigure}
-\paragraph{Ana Roldàn} is a passionate physicist-to-be and involved in every corner of the project. She is not afraid to ask the big questions and inspires everyone with her strong passion for science.
+\paragraph{Ana Roldán} es una apasionada físico en entrenamiento y está involucrada en todas las partes del proyecto. Nunca se intimida ante los desafíos  y no tiene miedo de hacer las grandes preguntas e inspirar a todos con su fuerte pasión por la Ciencia.
 \\ \\
 
 \begin{wrapfigure}{l}{0.2\textwidth}
@@ -151,7 +153,7 @@ We are a group of students willing to challenge ourselves to the limit. Octanis 
      \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{raf}
 \end{wrapfigure} 
-\paragraph{Raffael Tschui} is an Electrical Engineer, EPFL, BSc. He has the vital role of energy generation, control and regulation in the project. He keeps the rovers heart beating. He is currently on a mission in Columbia to help an EPFL professor build a bioreactor for water cleaning.
+\paragraph{Raffael Tschui} es un Ingeniero Eléctrico, EPFL, BSc. Tiene el vital papel de la generación energética, el control y la regulación del proyecto. Mantendrá el corazón de Octanis latiendo. Actualmente se encuentra en una misión en Colombia, como ayudante de un Profesor de la EPFL en la construcción de un bioreactor purificador de agua.
 \\ \\
 
 \begin{wrapfigure}{l}{0.2\textwidth}
@@ -159,185 +161,184 @@ We are a group of students willing to challenge ourselves to the limit. Octanis 
     \vspace{-13pt}
     \includegraphics[width=0.15\textwidth]{pam}
 \end{wrapfigure} 
-\paragraph{Pamela Canjura} has been interested in chemistry since she was five and competes regularly in the Chemistry Olympics. She is working on the chemical analyses that can be done on-board Octanis.
+\paragraph{Pamela Canjura}  su interés por la química despertó a los 5 años y no ha cesado desde entonces. Compitió varias veces en las Olimpiadas Internacionales de Química. Ella esta trabajando en los análisis químicos que serán hechos a bordo de Octanis.
 \\ \\
 
 
-\subsection{Budget}
+\subsection{Presupuesto}
 
-The following table describes the planned costs with an accuracy of $\pm 20\%$ (m.c. = mission critical): \\ 
+La siguiente tabla describe el plan de costo con precisión $\pm 20\%$ (m.c. = mission critical): \\ 
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{ l | c || r }
-  Cost Item & Priority & One-Time Costs \\
+  Costo de Artículos & Prioridad& Gastos no Recurrentes \\
   \hline
-  Rover Solar \& Heating & m.c. & 1000 CHF \\
-  Rover Communications & m.c. & 500 CHF \\
-  Rover Instruments \& Sensors & m.c. & 500 CHF \\
-  Rover Electronics & m.c. & 700 CHF \\
-  Rover Mechanics \& Mobility & m.c. & 1000 CHF \\
-  Balloon Transportation & opt. & 1500 CHF \\
+  Energía Solar del Robot \& Calefacción & m.c. & 1000 CHF \\
+  Comunicación del Robot & m.c. & 500 CHF \\
+  Instrumentos del Robot \& Sensores & m.c. & 500 CHF \\
+  Electrónicos del Robot & m.c. & 700 CHF \\
+  Elementos Mecánicos del Robot \& Movilidad & m.c. & 1000 CHF \\
+  Transporte con el Globo & opt. & 1500 CHF \\
   \hline \hline
-  & & mission critical: 3700 CHF  \\
-  & & optional: 1500 CHF \\
+  & & Prioridad de la Misión (Mission Critical): 3700 CHF  \\
+  & & opcional: 1500 CHF \\
 \end{tabular}
-\caption{General budget.}
+\caption{Presupuesto General.}
 \end{table}
 
 
-The only reoccurring costs are caused by the Iridium Satellite Messenger \cite{iridium}. These range from 0.04-0.12 GBP per message (340 bytes / Message-Out) and a standard line-rental fee of 8 GBP / month. Per-message cost depends on the message volume needed.
+El único costo recurrente es causado por la transmisión satelital de Iridio \cite{iridium}. Este rango va desde 0.04-0.12 GBP por mensaje (340 bytes / Message-Out) y con una tarifa estándar de linea de alquiler de 8 GBP / mes. El costo por menaje depende de la cantidad de mensajes necesitados.
 
 
 
-\section{Rover Transportation and Deployment}
+\section{Transporte y Despliegue del Robot}
 
-Octanis 1 is a light-weight rover meaning its total mass will not exceed 2.5kg. Thanks to this there are multiple cost-effective deployment options available which are listed below:
+Octanis 1 es un vehículo ligero lo que significa que su masa total no excederá de 2,5 kg. Gracias a esto, hay varias opciones de despliegue rentables disponibles, mismas que se enumeran a continuación:
 
-\subsection{Methods of deployment}
+\subsection{Métodos de Despliegue}
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.4\textwidth]{trajectory}
-    \caption{HYSPLIT trajectory simulation starting in Rio Grande, Argentina.}
+    \caption{Simulación de una posible trayectoria desde Río Grande, Argentina con HYSPLIT.}
 \end{figure}
 
-\paragraph{High Altitude Balloons} or more commonly known, weather balloons, can be used to bring the rover to its target destination. Helium-filled, they typically float up to an altitude of 30km and a trajectory of hundreds of kilometers can be achieved. However the path of the balloon cannot be controlled and relies on rigorous pre-flight simulations with the HYSPLIT simulation software \cite{hysplit} \cite{hysplitjava}. This is the cheapest method to deploy the rover to Antarctica as it is only required to travel to lower South America, to which commercial flights exist, to launch the rover attached to the balloon. With this benefit comes a higher risk of deployment failure. Even with precise weather models, the weather could suddenly change and move the balloon off its path. That being said, HYSPLIT was already successfully used in numerous ballooning projects like Piccard and Jones' Breitling-Orbiter 3 \cite{hysplitexamples}.
-Once the balloon-rover-configuration have reached their target destination, the rover is separated from the balloon and parachutes to the ground. The balloon continues on uncontrolled and will eventually burst or float to the ground after the helium diffuses out.
+\paragraph{Globos de Gran Altitud} o mas comúnmente conocidos, como globos climáticos. Uno puede ser usado para llevar al robot hasta su destino final. Llenos de Helio, estos normalmente flotan a una altura de 30 km y con una trajectororia asignada de cientos de kilómetros. Sin embargo la trayectoria a seguir del globo no puede ser controlada y depende de una rigurosa pre-simulación de vuelo hecha a través del simulador de software HYSPLIT  \cite{hysplit} \cite{hysplitjava}. Este es el método mas barato para enviar el robot a la Antártida, solo requiere como punto de partida algún lugar de america del sur, donde es posible tomar un vuelo comercial, y luego en la locación escogida dejar despegar el globo junto con el robot. Pero con este beneficio viene un alto riesgo de fallas en el despliegue. Incluso con modelos climáticos precisos, el clima podría cambiar repentinamente y sacar el globo de su trayectoria. Pero debemos aclarar que, HYSPLIT fue utilizado con éxito en numerosos proyectos de este tipo, como  el Orbitador Breitling de Piccard y Jones 3 \cite{hysplitexamples}.
+Una vez que el robot y el globo hayan llegado a su destino final, el robot se separa del globo y aterrizará con la ayuda de un paracaídas. El globo continuará divagando sin trayectoria fija, hasta que finalmente explote o caiga al suelo cuando el helio se haya dispersado.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{lowcostchute}
-    \caption{Depicted is one of our self-built, low-cost parachutes during a test. }
+    \caption{Fotografía de una prueba de aterrizaje con un paracaídas de bajo costo, fabricado por el equipo de Octanis.}
 \end{figure}
 
 
-\paragraph{Helicopter} - a method to consider is to deploy Octanis out of a helicopter which is already on a specific route. The rover could be given to one of the passengers or attached to the transport cord and detached on demand. Similar to balloon deployment, Octanis would swiftly parachute to the ground and begin its mission.
+\paragraph{Helicóptero} - un método a considerar es desplegar Octanis desde un helicóptero que ya se encuentra en una ruta específica. El rover se podría dar a uno de los pasajeros o conectarse al cable de transporte, separándose en el momento adecuado. Al igual que en el despliegue con el globo, Octanis aterrizaría rápidamente en paracaídas y estaría listo para comenzar su misión.
 
 
-\paragraph{Manual} deployment is suggested when costs and risk need to be as low as possible. This is by far the easiest method and just means going to the desired location and setting the rover down. Octanis continues on by its own and can return to the set-down location.
-
-
-
-
-\subsection{Environmental Sustainability}
-It is desirable to not leave any waste behind as well as it is required by the Antarctic Treaty. Depending on the method of deployment, the total mass and types of materials that will be included on a mission to Antarctica vary. A deployment of the rover to a target out of reach of normal Antarctic expeditions is done by using a High Altitude Balloon or a standard 3kg latex weather balloon. In such a long-distance mission, the rover will be separated from the balloon at the target location and the balloon will continue to fly unattended. Therefore the landing location of the balloon can not be known. Due to the nature of such a long-distance mission, typically the rover is unreachable to any expedition or base - the rover is left for the benefit of information on that location.
-
-In a first step, it is therefore proposed to select a landing site that is in reach of normal Antarctic expeditions or bases. It is even possible to release the rover by other means like bringing it to the location manually or via helicopter.
-
-Concluding, the rover is a construction of various polymers and metals, and a small risk exists that it will end up being uncontrollable due to malfunction. The total rover mass however does not exceed 2.5kg and therefore the pollution produced is small. In the unlikely event of failure, the rover can then be retrieved manually thanks to the last known transmitted location.
+\paragraph{Manual} este despliegue se sugiere cuando los costos y los riesgos necesitan ser los más bajos posibles. Este es, con mucho, el método más fácil, simplemente se debe ir a la ubicación deseada y ajustar el robot para que empiece su exploración. Octanis continuaría por sí mismo y regresará a la localización deseada.
 
 
 
+\subsection{Sustentabilidad Ambiental}
+Es conveniente no dejar residuos, siguiendo los requerimientos del Tratado Antártico. Dependiendo variación del método de despliegue, la masa total y el tipo de materiales que se incluirían en una misión a la Antártida. Un despliegue del robot a un objetivo fuera del alcance de las expediciones antárticas normales, se realizaría mediante el uso de un globo de gran altitud, con una masa de 3 kg, hecho de látex utilizado por los globos meteorológicos estándar. En una misión de larga distancia, el robot se separará del globo en el lugar de destino y el globo continuará flotando sin supervisión. Por lo tanto, no tendríamos con precisión el lugar de aterrizaje del globo. Debido a la naturaleza de este tipo de misiones en particular, por lo general el robot sería irrecuperable, convirtiendose en una pequeña base fija que recopilaría información constantemente del lugar.
 
-\section{Rover Subsystems}
+En un primera fase, se propone, por lo tanto seleccionar un lugar de aterrizaje que este al alcance de las expediciones o bases antárticas normales. Incluso es posible liberar el robot por otros medios, llevándolo a la ubicación de forma manual o por medio de helicóptero.
 
-\subsection{Board Computer}
+Concluyendo, el robot está construido de polímeros y metales, y existe un mínimo  riesgo de que este se salga de control debido a una falla de funcionamiento. La masa total robot, sin embargo no excede los 2,5 kg, por lo que la contaminación producida es mínima. En el improbable caso de avería, el vehículo puede recuperar de forma manual siguiendo la última ubicación conocida a través de las transmisiones.
+
+
+
+
+\section{Subsistema del Robot}
+
+\subsection{Ordenador a Bordo}
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=1\textwidth]{schema}
-    \caption{Schema of the on-board computing system with peripherals.}
+    \caption{Esquema del sistema informático a bordo de los periféricos.}
 \end{figure} 
-The Texas Instruments MSP430 16-bit ultra-low power microcontroller family is the preferred processor choice for the embedded computer system of the rover. The microcontroller will take over most control and regulation tasks, specifically driving, navigation, communications and sensor processing. The system will run a realtime operating system capable of reliably multitasking with prioritised tasks. The computer will interact with the following on-board peripherals:
+La familia de microcontroladores de 16 bits de potencia ultra baja, Texas Instruments MSP430, es la opción preferida para ser el procesador de sistema informático integrado del robot. El microcontrolador se hará cargo de la mayoría de las tareas de control y regulación, la trayectoria específica, la navegación, las comunicaciones y los sensores de procesamiento. El sistema ejecutará un sistema operativo en tiempo real, capaz de realizar múltiples tareas, diferenciando las tareas prioritarias. El equipo va a interactuar con los siguientes periféricos a bordo:
 
 \begin{itemize}
-\item Inertial Measurement Unit: accelerometer, gyroscope, magnetometer, precision barometer.
-\item Weather module: temperature, barometer, hygrometer, anemometer.
-\item Science instrument: pH probe.
-\item Optics module: camera, distance sensors.
-\item Drive module: motor controllers, current sensors.
-\item Communication: Iridium, APRS, ZigBee.
-\item SD card memory.
-\item GPS module.
+\item Unidad de Medida Inercial: acelerómetro, giroscopio, magnetómetro, barómetro de precisión.
+\item Módulo de tiempo: temperatura, barómetro, higrómetro, anemómetro.
+\item Instrumento Científico: Sonda de pH.
+\item Módulo Óptico: cámara, Sensores de distancia.
+\item Modulos de Desplazamiento: controladores de motores, sensores de corriente.
+\item Communicación: Iridio, APRS, ZigBee.
+\item Tarjeta de Memoria SD.
+\item Módulo GPS.
 \end{itemize}
 
-An auxiliary computer will take over if the main computer malfunctions. It will try to reset the main computer and if unsuccessful provide basic system functionality.
+Un ordenador auxiliar estará disponible si el ordenador principal falla. Este tratará de reiniciar el ordenador principal y si no lo consigue proporcionará la funcionalidad básica del sistema.
 
 
 
-\subsection{Power}
+\subsection{Fuentes de Energía}
 
-The energy of the sunlight per square meter is $E_0*sin(\alpha)$ with $E_0=1367 W/m^2$ \cite{solarc} and $\alpha$ the angle between the direct incoming sunrays and the horizontal. For the Antarctic, we can use $\alpha \approx 23.5+90+|\phi|$ where $\phi$ is the latitude, to get an estimate of the maximum energy (i.e. in summer) at a certain geographic point (see fig. 4).
+La energía de la luz solar por metro cuadrado es $E_0*sin(\alpha)$ con $E_0=1367 W/m^2$ \cite{solarc} y $\alpha$  el ángulo de los rayos que caes y el eje horizontal. Para la Antártida, podemos usar $\alpha \approx 23.5+90+|\phi|$ donde $\phi$ es la latitud, para obtener un estimado de la máxima energía disponible (es decir en verano) en un determinado punto geográfico (see fig. 4).
 
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.6\textwidth]{sun}
-    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \caption{Concepto de diseño de Octanis, basado en el nanorobot MUSAS-CN}
 \end{figure}
 
 
- This would lead to $1050 W/m^2$ for the northmost point of the antarctic (@ 65\degree S) and $545 W/m^2$ at the south pole (@ 90\degree S). Bare in mind that, during the six sunny months this value will oscillate between 0 and the maximum value just calculated \cite{pvedu}. 
-Assuming our panels are installed horizontally and considering current solar panel efficiency (around 15-20\%) this means that per square meter we can convert max. 200 W into electrical energy. If we take a pessimistic efficiency and a “radiation mean value” during the 6 months of the mission (just 1/2 of the maximum value) we would need a panel of the size of $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) to output a power of 10 W. But, this didn’t consider the daily oscillation of the radiation angle, nor that it does get night during certain time periods for any point north from the south pole. Therefore, it is more reasonable to take the pessimistic $0.25m^2$ value (also because the energy supply will decrease with bad weather).
+Esto llevaría a $1050 W/m^2$ para el punto más septentrional de la Antártida(@ 65\degree S) y $545 W/m^2$ en el polo sur (@ 90\degree S). Hay que tener en mente que durante los 6 meses de verano, este valor oscilará entre 0 y el máximo valor calculado\cite{pvedu}. 
+Asumiendo que nuestros paneles están instalados horizontalmente y considerando la eficiencia de los paneles solares (alrededor del 15-20\%)  esto significa que por metro cuadrado podremos convertir max. 200 W en energía eléctrica. Si calculamos con una eficiencia pesimista y una "radiación de valor medio" durante los 6 meses de la misión (sólo 1/2 del valor máximo), necesitaríamos un panel cuyo tamaño sea de $0.13m^2$ (@ 65\degree S) to $0.25m^2$ (@ 90\degree S) para obtener 10 W de potencia.Pero sin  considerar la oscilación diaria del ángulo de la radiación, o que hay ciertos periodos de penumbra. Por lo tanto, es más razonable usar los valores obtenidos en base a la segunda opción $0.25m^2$ (también tomando en cuenta que la energía que podemos suministrar decrece con el mal clima).
 
-To summarise, a panel surface of $0.25m^2$ will provide us with an average (seasonal, daily) power of 10W and these numbers are proportional. 
-
-
-\subsection{Thermal}
-
-The ultimate priority is to keep the system at -20\degree C or above, which means that all the energy from the solar cell and, if necessary, from the battery will first be used to maintain this goal. The heating system is therefore directly connected between the solar cell and the battery charge controller. It is controlled with electronic comparators that enable one or another energy source to power the heating pads depending on temperature thresholds listed below. The charge controller itself takes care of the temperature limits for charging the battery and switches itself on and off automatically. 
+Para resumir, la superficie de un panel de $0.25m^2$ proveería en promedio (estacional, diario) una potencia de 10W, siendo estos números proporcionales. 
 
 
-\subsection{Mechanical}
-The rover body design (fig. 5) has been substantially influenced by NASA's MUSES-CN nanorover \cite{muses}. The nanorovers design is a unique design as it allows almost complete freedom. We have designed Octanis 1 to be lightweight with a large enough surface area to produce enough solar energy for the mission duration. The body dimensions are roughly 30cm x 30cm x 6cm.
+\subsection{Procesos Térmicos}
+
+La máxima prioridad es mantener el sistema a -20\degree C o superior, lo que significa que toda la energía de los paneles solares y, si es necesario, de la batería, se utilizará primero para mantener una temperatura en la que los sistemas funcionen adecuadamente. Por lo consiguiente, el sistema de calefacción estará conectado directamente entre los paneles solares y el controlador de carga de la batería. Se controlará a través de comparadores electrónicos que escogen una u otra fuente de energía para alimentar las almohadillas de calor en función de los umbrales de temperatura específica que se indican a continuación. El controlador de carga en sí se ocupa de los límites de temperatura para la alimentación de la batería y se enciende y apaga automáticamente. 
+
+
+\subsection{Procesos Mécanicos}
+El diseño del cuerpo del robot (fig. 5) ha sido sustancialmente influenciado por el nanorobot de la NASA MUSES-CN \cite{muses}. Este es un diseño único, que permite la libertad casi completa de movimiento. Hemos diseñado Octanis 1 para que sea ligero, con una área superficial lo suficientemente grande para producir la energía solar que se necesita durante de la misión. Las dimensiones de la carrocería son aproximadamente 30cm x 30cm x 6cm.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.5\textwidth]{conceptrover}
-    \caption{Octanis rover design concept built after MUSES-CN nanorover.}
+    \caption{Concepto de diseño de Octanis, basado en el nanorobot MUSAS-CN.}
 \end{figure}
 
-As depicted in figure 6, this rover design allows many orientations for different situations. Main concerns of the mission are energy supply and weather resistance. As the whole rover body is covered with solar cells, the rover can right itself up according to sun position to expose most of its area to sunlight. In harsher weather conditions it is also crucial to make sure snow doesn't cover up the panels. This can be prevented by periodically flipping the rover. Not only snow, but wind can be an issue and sometimes even flipping over the rover. If this occurs, the rover can return to a driving position by actuating the struts. All wheel struts can be rotated around the axis and are fitted with a separate motor each. They are moved through a worm drive to keep them static when they are not rotating without having to apply constant power. \\
-Another benefit of this design is it allowing us to build a simpler drilling device. When drilling an ice core, the rover can lower itself to the ground exploiting its own weight as pressure onto the drill. The drill bit just needs to spin and doesn't need to retract into the rover body.
+Como podemos observar en la figura 6, este diseño permite al robot cambiar de orientación dependiendo de los requerimientos de la situación. Siendo las principales preocupaciones de la misión, el suministro de energía y la resistencia a la intemperie. Y dado a que todo el cuerpo del robot está cubierta de paneles solares, este puede enderezarse de acuerdo a la posición del sol para exponer la mayor parte de su superficie a la luz solar. Esta capacidad también es crucial en condiciones climáticas adversas para asegurarse de que la nieve no cubra los paneles girando o volteando periódicamente al robot. No sólo la nieve, también el viento puede ser un problema, puede llegar a tumbarlo o ponerlo en una posición desfavorable. Si esto ocurriese, el vehículo podría volver a la posición de conducción adecuada mediante la activación de los puntales. Todos los apoyos de las ruedas se pueden girar alrededor de los ejes y están equipadas individualmente con un motor independiente. Estos se mueven a través de un tornillo con el fin de mantenerlas estáticas cuando no están girando sin tener que aplicar una fuerza constante. \\
+Otra ventaja de este diseño es que podemos utilizarlo en la construcción de los dispositivos de perforación, haciendo este proceso más simple y eficiente. Mientras se perfora un núcleo de hielo, el robot puede descender, generando una fuerza adicional, su peso, como presión sobre el taladro. La broca sólo tiene que girar y no necesita retraerse en el cuerpo del robot.
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ c  c  c }
 \includegraphics[width=0.3\textwidth]{drive} & \includegraphics[width=0.25\textwidth]{upright} & \includegraphics[width=0.4\textwidth]{flat} \\
 \end{tabular}
-\caption{Different wheel strut configurations l.t.r.: (1) drive mode, (2) solar recharge mode, (3) wind protect mode.}
+\caption{Diferentes configuraciones de apoyo en las ruedas l.t.r.: (1) modo desplazamiento, (2) modo recarga solar, (3) modo a prueba de viento.}
 \end{figure}
 
 
-\subsection{Mobility}
-Snowy and icy terrain will be Octanis' main habitat and so its wheels need to be specifically designed to be wide, lightweight and should provide a good traction going upwards. 
-All four wheels will be individually motorised and provide enough torque to move Octanis on an inclination of 30 degrees. Turning can be achieved by rotating the wheels on each side at different speeds. 
+\subsection{Movilidad}
+Un terreno cubierto de nieve y hielo será el principal hábitat Octanis por lo tanto las ruedas fueron diseñadas específicamente para este ambiente, con una superficie amplia, pero siendo ligeras, proporcionando una buena tracción en el ascenso. 
+Las cuatro ruedas estarían motorizadas de forma individual proporcionando el impulso suficiente par para mover Octanis en una inclinación de 30 grados. Para realizar diferentes tipos de giros, la rotación de las ruedas en cada lado puede hacerse a diferentes velocidades.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.4\textwidth]{wheel}
-    \caption{Initial wheel design. Fins allow the wheel to dig into the snow while driving providing better traction.}
+    \caption{Diseño de las ruedas inicial. Las aletas que sobresalen permiten que las ruedas excaven en la nieve durante el desplazamiento con una mejor tracción.}
 \end{figure}
 
 
-An inertial measurement unit (IMU) will be used to know the rovers orientation at any point in time. It consists of a gyroscope, accelerometer, precision barometer and magnetometer. The sensors information is fed back to the control systems that actuate the motors. Should the rover need to go over an obstacle, the wheel struts will be rotated as far as possible so that the rover body is always in a plane parallel to the ground. This minimises the risk of being tipped over and should allow the easy traversal of obstacles higher than the wheel radius and is similar to the rocker-bogie suspension system used on NASAs mars rovers \cite{rockerbogie}. Due to the high risk of overturn caused by wind gusts the passive rocker-bogie design was not chosen, since there would be no simple way of righting back up.
+La unidad de medición inercial (IMU) se utiliza para conocer la orientación robot en cualquier momento. Está compuesta de un giroscopio, acelerómetro, barómetro de precisión y magnetómetro. La información de los sensores se retro-alimenta a los sistemas de control que activan los motores. En caso de que el vehículo tenga que ir sobre un obstáculo, los apoyos de rueda se pueden girar en la medida de lo posible de manera que el cuerpo del robot este siempre en un plano de orientación paralelo al suelo. Esto minimizará el riesgo de volcamiento y nos permitirá ir fácilmente sobre obstáculos mas grandes que el radio de la ruedas, de forma similar al sistema de suspensión rocker-bogie utilizado en vehículos de exploración de Marte de la NASA\cite{rockerbogie}. Debido al alto riesgo de vuelco causado por las ráfagas de viento, el diseño sin motor del rocker-bogie no fue seleccionado, ya que no hay una forma sencilla de ponerlo en pie.
 
-Octanis' top speed is estimated to be at 100cm/min. Disregarding energy availability depending on weather, gives it a daily range of around 1km. There will be two driving modes: discovery and shortest path. \textbf{Discovery mode} will make the rover densely traverse either a preprogrammed circular area of a map or on detecting a certain phenomena (e.g. higher pH levels). \textbf{Shortest path} brings Octanis from waypoint to waypoint using the shortest path. Both methods can be used in combination. Detected obstacles can be stored as landmarks and help build a rough map.
+La velocidad máxima Octanis se estima en 100cm/min. Sin tener en cuenta la disponibilidad de energía en función de tiempo, esto le da un rango de alcance diario de aproximadamente 1 km. Habrá dos modos de desplazamiento: exploración y la ruta más corta. \textbf{Modo Exploración} hará que el robot atraviese con un amplia área de barrido una localización pre-seleccionada o busque un fenómeno específico \textbf{La ruta más corta} trae a Octanis desde una ubicación a otra a través del camino mas corto. Ambos métodos pueden utilizarse en combinación. Los obstáculos detectados pueden ser almacenados como puntos de referencia, lo que ayudaría a construir un mapa aproximado de la zona explorada.
 
-\subsection{Communication}
-Regular data transmission is a mission critical feature of the rover. It is achieved by using the Iridium Short Burst Data (SBD) service with the help of the RockBLOCK Iridium 9602 modem \cite{iridium}. This modem allows the transmission of data packets of up to 340 bytes outwards and 270 bytes inwards approximately every 20 seconds. Larger data frames can be fragmented and transmitted with multiple packets. The key to this modem and network is that is available everywhere on Earth at any time, something that cannot be said of the GSM network or even amateur radio. That the modem require just as low power as the GPS on board adds to the list of benefits. Information sent through the Iridium network is automatically sent to a server and uploaded to the project website, where the public can view Octanis' state and data.
+\subsection{Sistemas de Comunicación}
+La transmisión de datos con regularidad es una característica prioritarias de la misión del robot. Esto se logrará mediante el uso del servicio de transmición de datos a través del Iridium Short Burst (SBD) con la ayuda del módem RockBLOCK Iridium 9602 \cite{iridium}. Este módem permite la transmisión de paquetes de datos, con un máximo de envío de hasta 340 bytes y una recepción 270 bytes aproximadamente cada 20 segundos. Un conjunto de datos de mayor tamaño puede ser fragmentado y transmitido en varios paquetes. La conexión a este módem y a esta red está disponible en cualquier parte de la Tierra en cualquier momento, algo que no se puede decir de la red GSM o incluso de la radio amateur. El módem requiere igual de baja potencia como los GPS a bordo se suma a la lista de beneficios. La información enviada a través de la red Iridio se manda automáticamente a un servidor y se carga directamente en el sitio web del proyecto, donde el público puede ver el estado y los datos recopilados por Octanis.
 
-Octanis 1 will also be equipped with a 5 watt one-way APRS transmitter, transmitting sensor data and location information on the 2-meter band. This can be received by amateur radio operators (or unlicensed individuals with radio scanners) who are in range. The range of this transmitter is typically hundreds of kilometers when travelling in the sky (i.e. attached to a balloon). On the ground, the range is orders of magnitude smaller.
-
-
-\subsection{Optical}
-Octanis will be able to take snapshots on-demand with a low resolution camera. It is part of an experiment to find out if an image can be efficiently sent via the Iridium network. Additionally we would like to test on-board image processing (e.g. simple feature detection). The optical system is completed by distance sensors that can detect nearest obstacles. It will be evaluated if the Neato XV-11's LIDAR \cite{lidar} can be used or if we should proceed with IR distance sensors.
+Octanis 1 también estará equipado con un transmisor APRS unidireccional de 5 vatios, los sensores transmiten datos y la información de localización en una banda de 2 metros. Esta puede ser recibida por los operadores de radio amateur (o personas sin licencia con escáneres de radio) que se encuentren en este rango. El rango de este transmisor es normalmente de cientos de kilómetros cuando se envía directamente desde el cielo (es decir, conectada a un globo). Sobre el terreno, el rango es mucho menor.
 
 
-\subsection{Scientific Instrument}
-The preferred scientific instrument for this mission is a ice core drill combined with a pH probe. The drill is able to drill a small 1cm x 5cm ice/snow core, retract it from the cold surface and then melt the sample. The ice/snow-water can be analysed with a pH probe, that is typically a glass electrode, to determine the pH value. Due to the low-cost nature of the sensor to be used, precision cannot be guaranteed by the manufacturer and has to be calibrated and tested by us. It is though assumed that the device will give good readings for comparison of a high quantity of samples.
+\subsection{Sistemas Ópticos}
+Octanis podrá tomar instantáneas según se le ordene, aunque con una cámara de baja resolución. Esto forma parte de un experimento que pretende averiguar si una imagen se puede enviar de manera eficiente a través de la red de Iridio. Además nos gustaría probar el procesamiento de imágenes a bordo (por ejemplo, la detección de características simples). El sistema óptico se completa con sensores de distancia que pueden detectar obstáculos más cercanos. Se evaluará si el LIDAR Neato XV-11 \cite{lidar} puede ser usado o si debemos utilizar sensores de distancia IR.
+
+
+\subsection{Instrumentos Científicos}
+El instrumento científico fundamental para esta misión es un taladro de hielo fusionado a una sonda de pH. El taladro será capaz de perforar un área de 1cm x 5cm en el hielo o nieve, retraerse desde la superficie fría y luego fundir la muestra. La muestra liquida de hielo o nieve sería analizada con una sonda de pH, un electrodo de vidrio, que determinará la acides de la muestra. Con el fin de minimizar los costos de la misión, en el sensor que se utilizaremos no es de alta calidad, y la precisión no puede ser garantizada por el fabricante. por lo que requiere ser calibrado, modificado y probado por nosotros. Suponemos que el dispositivo nos dará lecturas bastante precisas si se hace una comparación entre un gran número de muestras.
 
 \pagebreak
 
-\section{Conclusion}
-Knowing that this mission is an ambitious one and will have many challenges to be solved on the way, we believe that it is a possible and viable project. When we can achieve our objectives, we will be able to provide the scientific community (including so-called citizen scientists) with a universal and adaptable rover platform. Proving ourselves in the harsh environment of Antarctica means that our rover can survive many other similar environments. \\
+\section{Conclusión}
+Sabiendo que está es una misión ambiciosa y que el camino esta lleno de desafios, creemos que es un proyecto viable y factible. Cuando seamos alcancemos nuestros objetivos, seremos capaces de ofrecer a la comunidad científica (incluyendo a los llamados ciudadanos científicos) una plataforma móvil universal y adaptable. Que es capaz de soportar el hostilidad de la Antártida o ambientes similares.\\
 
-We hope to fascinate and inspire students, teachers, artists, entrepreneurs, scientists - in the end all people - for interdisciplinary research, engineering and knowledge sharing, hoping that they will join us on the grand mission to a better world!
+Esperamos fascinar e inspirar a estudiantes, profesores, artistas, empresarios, científicos y al público en general para que compartan junto a nosotros esta investigación interdisciplinaria, despertando así el interés del público en la Ciencia e Ingeniería, con la esperanza de que todos se unan a nosotros en nuestra misión prioritaria, construir un mundo mejor.
 
 
 \pagebreak
 \pagestyle{empty}
-\begin{thebibliography}{1}
+\begin{thebibliography}{14}
 
 
 \bibitem{krishnakant}
