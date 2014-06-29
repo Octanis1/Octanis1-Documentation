@@ -188,7 +188,7 @@ La siguiente tabla describe el presupuesto con precisión $\pm 20\%$ (c.p. = cos
 \end{table}
 
 
-El único costo recurrente es la transmisión satelital de Iridio \cite{iridium}. Este rango va desde 0.04-0.12 GBP por mensaje (340 bytes / Message-Out) y con una tarifa estándar de linea de alquiler de 8 GBP / mes. El costo por menaje depende de la cantidad de mensajes necesitados.
+El único costo recurrente es la transmisión satelital de Iridium \cite{iridium}. Este rango va desde 0.04-0.12 GBP por mensaje (340 bytes / Message-Out) y con una tarifa estándar de linea de alquiler de 8 GBP / mes. El costo por menaje depende de la cantidad de mensajes necesitados.
 
 
 
@@ -247,7 +247,7 @@ La familia de microcontroladores de 16 bits de potencia ultra baja, Texas Instru
 \item Instrumento Científico: Sonda de pH.
 \item Módulo Óptico: cámara, Sensores de distancia.
 \item Modulos de Desplazamiento: controladores de motores, sensores de corriente.
-\item Communicación: Iridio, APRS, ZigBee.
+\item Communicación: Iridium, APRS, ZigBee.
 \item Tarjeta de Memoria SD.
 \item Módulo GPS.
 \end{itemize}
@@ -311,7 +311,7 @@ Las cuatro ruedas estarían motorizadas de forma individual proporcionando el im
 \end{figure}
 
 
-La unidad de medición inercial (IMU) se utiliza para conocer la orientación robot en cualquier momento. Está compuesta de un giroscopio, acelerómetro, barómetro de precisión y magnetómetro. La información de los sensores se retro-alimenta a los sistemas de control que activan los motores. En caso de que el vehículo tenga que ir sobre un obstáculo, los apoyos de rueda se pueden girar en la medida de lo posible de manera que el cuerpo del robot este siempre en un plano de orientación paralelo al suelo. Esto minimizará el riesgo de volcamiento y nos permitirá ir fácilmente sobre obstáculos mas grandes que el radio de la ruedas, de forma similar al sistema de suspensión rocker-bogie utilizado en vehículos de exploración de Marte de la NASA\cite{rockerbogie}. Debido al alto riesgo de vuelco causado por las ráfagas de viento, el diseño sin motor del rocker-bogie no fue seleccionado, ya que no hay una forma sencilla de ponerlo en pie.
+La unidad de medición inercial (IMU) se utiliza para conocer la orientación robot en cualquier momento. Está compuesta de un giroscopio, acelerómetro, barómetro de precisión y magnetómetro. La información de los sensores se retro-alimenta a los sistemas de control que activan los motores. En caso de que el vehículo tenga que ir sobre un obstáculo, los apoyos de rueda se pueden girar en la medida de lo posible de manera que el cuerpo del robot este siempre en un plano de orientación paralelo al suelo. Esto minimizará el riesgo de volcamiento y nos permitirá ir fácilmente sobre obstáculos mas grandes que el radio de la ruedas, de forma similar al sistema de suspensión rocker-bogie utilizado en vehículos de exploración de Marte de la NASA\cite{rockerbogie}. Debido al alto riesgo de vuelco causado por las ráfagas de viento, el diseño sin motor del rocker-bogie no fue seleccionado, ya que no hay una forma sencilla de ponerlo en pie si este llega a voltearse.
 
 La velocidad máxima Octanis se estima en 100cm/min. Sin tener en cuenta la disponibilidad de energía en función de tiempo, esto le da un rango de alcance diario de aproximadamente 1 km. Habrá dos modos de desplazamiento: exploración y la ruta más corta. \textbf{Modo Exploración} hará que el robot atraviese con un amplia área de barrido una localización pre-seleccionada o busque un fenómeno específico \textbf{La ruta más corta} trae a Octanis desde una ubicación a otra a través del camino mas corto. Ambos métodos pueden utilizarse en combinación. Los obstáculos detectados pueden ser almacenados como puntos de referencia, lo que ayudaría a construir un mapa aproximado de la zona explorada.
 
