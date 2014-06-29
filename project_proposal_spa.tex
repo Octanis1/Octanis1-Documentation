@@ -40,9 +40,9 @@
 \vspace{1pt}
 \begin{tabular}{ l  l  l }
 	\textbf{Rev.} & \textbf{Traducciones} & \textbf{Autores} \\
-	25.6.14 & Propuesta Inicial & Sam Sulaimanov, Raffael Tschui, Ana Roldán, Pamela Canjura \\
-	27.6.14 & Versión en español & Ana Roldán \\
-	27.6.14 & Versión en alemán & Raffael Tschui \\
+	25.6.14 & Propuesta Inicial & Samir Sulaimanov, Raffael Tschui, Ana Roldán, Pamela Canjura \\
+	27.6.14 & Versión en Español & Ana Roldán \\
+	27.6.14 & Versión en Alemán & Raffael Tschui \\
 \end{tabular}
 \end{table}
 
@@ -66,24 +66,27 @@ El objetivo de la misión Octanis 1, es construir una unidad robótica autónoma
 
 \subsection{Objetivos}
 
+Octanis 1 tiene como objetivo la construcción de un robot económico, de bajo impacto ambiental que tenga la capacidad de recopilar datos meteorológicos y ambientales bajo condiciones extremas en la Antártida. Todo esto con el fin de obtener datos fiables y en tiempo real sobre las condiciones en la Antartida. Esta información será publicada en tiempo real en la pagina www.octanis.org con el fin de que cualquier persona pueda realizar investigaciones o estudios con datos fiables y fácilmente accesibles.
+Octanis 1 será un robot suficientemente pequeño y ligero como para ser transportado por globos meteorológicos. Ha sido diseñado especialmente para moverse sobre hielo y para resistir fuertes ráfagas de viento sin voltearse. El robot estará dotado de paneles solares y baterías para asegurar un suministro continuo de energía que le permita regular su temperatura y realizar todas las actividades y mediciones planeadas durante los meses de verano austral. Como sistema de tracción contará con cuatro ruedas conectadas a ejes independientes que dotarán a Octanis 1 de movilidad absoluta y la capacidad de girar sobre su propio eje y levantarse.
+
+
 \paragraph{Robótica}
-Su hardware y software están construidos de manera simple pero funcional, resultado de una rigurosa optimización de diseño, que con una estructura ligera resiste el frío polar, las tormentas de viento,  y la presencia del agua. El robot será capaz de cumplir misiones de manera autónoma, con mínima asistencia humana. El recorrido de la misión será pre-programado, usando los sensores para realizar un recorrido optimizado y evitar obstáculos. Los comandos de interrupción o ayuda podrán ser enviados al robot via satélite. La generación y almacenamiento de energía esta implementada de manera que la misión pueda continuar por varios meses sin intercepción humana. 
+Su diseño en hardware y software ha sido concebido de manera simple pero funcional, resultado de un riguroso proceso de optimización en el que se buscaron materiales ligeros y resistentes a condiciones extremas incluyendo la presencia de agua, nieve y fuertes ráfagas de viento. El robot esta diseñado para cumplir sus misiones de manera autónoma o con mínima asistencia humana. Se programará un recorrido mediante puntos GPS y el robot tendrá la capacidad de evitar obstáculos y optimizar su velocidad. Toda comunicación con Octanis 1 será via la red de satélites Iridium. Gracias a la inclusión de paneles solares en su diseño, este robot podrá realizar misiones de varios meses de duración mientras dure el verano austral.
 
 \paragraph{Sensores}
-El robot llevará sensores a bordo capaces de registrar y transmitir regularmente el estado del medio ambiente externo e interno de un lugar determinado. Cuenta con una interfaz estándarizada para que los instrumentos científicos sean faciles de colocar e intercambiar. Todos los datos transmitidos hacia y desde el robot se pondrán a disposición del público en Internet en tiempo real. El robot tendrá una interfaz que se conectara a una red de sensores de amplia difusión  con el fin de que los robots de misiones futuras pueden trabajar como un enjambre.
+Todos los sensores estarán conectados al transmisor de datos, de modo que la información llegue a los usuarios de la forma mas rápida posible. Todos los datos recogidos por los sensores serán procesados y publicados en una interfaz estandarizada, de forma que en misiones futuras exista cooperación entre maquinas y estas puedan funcionar como un enjambre. 
 
 \paragraph{Despliegue}
-Varios de los métodos de despliegue del robot, tanto de largo como de corto alcance, se evaluarán y compararán. Sus costos y riesgos deberán aquilatarse.
+Se han analizado diversos métodos para el despliegue de esta misión, tomando en cuenta las dificultades de acceso y el aislamiento de los polos. Hasta este momento hemos dado con 2 alternativas: enviar a Octanis 1 en un globo meteorológico hasta la ubicación deseada y hacerlo descender usando un pequeño paracaídas o enviar una delegación de la organización para dejar el robot en el entorno a estudiarse. Los costos y riesgos de cada método deben ser analizados y discutidos en función del presupuesto y las probabilidades de éxito de de cada uno.
 
 
 \paragraph{Libre \& Reproducible} 
-Estamos construyendo Octanis basado en los principios del movimiento de código abierto. Todos los modelos de documentación, software y los modelos en 3D están disponibles en nuestro sitio web para que cualquiera los pueda descargar, reutilizar, modificar y/o contribuir. Tratamos de utilizar piezas genéricas, tanto como podamos, para que cualquier persona con los conocimientos necesarios pueda construir su propia versión de Octanis. Usamos también como técnica de fabricación, la impresión 3D, disponible para cualquiera con acceso a un taller, un fab lab \cite{fablab} o un hacklab \cite{hackerspace}. El acceso a estas infraestructuras esta disponible para cualquiera con un bajo presupuesto.
+Hemos diseñado el proyecto Octanis basándonos en los principios del movimiento de código abierto. Esto significa que todos los diseños, documentación, software y simulaciones 3D estarán disponibles al publico general en nuestro sitio web. Cualquier persona será libre de descargar, adaptar, reutilizar y distribuir esta información. Hemos hecho el esfuerzo de utilizar piezas y materiales fáciles de conseguir para que cualquier persona pueda replicar esta experiencia. También utilizamos técnicas de fabricación de bajo presupuesto como impresoras 3D, un fab lab  \cite{fablab} o un hacklab \cite{hackerspace}. El acceso a estas infraestructuras esta disponible para cualquier persona con un presupuesto mínimo.
  
 
 \subsection{Programa}
 
-Las fechas están programadas para ser ejecutadas en el 2014, a menos que se nos indique lo contrario. Las fechas detalladas para la misión científica se determinarán en coordinación con el Instituto Antártico colaborador. El proyecto se gestionan de manera ágil y transparente y su desarrollo es estrictamente cíclico con la finalidad de incorporar rápidamente modificaciones o mejoras si la necesidad se presenta. Este método ha funcionado efcientemente, dando buenos resultados en el pasado y ha mostrado dar  respuesta inmediata a los errores, manteniendo al mismo tiempo el bajo costo.
-Toda la documentación es publica a través de GitHub, mostrando la absoluta transparencia del proyecto \cite{octanisgithub}. 
+El calendario se ha planeado para ser ejecutado en el 2014-2015 a menos que se nos indique lo contrario. Ciertas fechas precisas deben ser coordinadas en colaboración con el Instituto Antártico.  del Ecuador. Al estar ideado por un pequeño grupo de personas, este proyecto se gestiona de manera ágil y transparente. Además su desarrollo es cíclico con la finalidad de incorporar rápidamente cualquier modificación o mejora que pueda presentarse. Este metido ha funcionado de forma eficiente hasta ahora, dando una respuesta inmediata a los problemas o dificultades que han surgido. Toda la documentación es publicada regularmente a través de GitHub  \cite{octanisgithub} para que toda la gestión sea lo mas transparente posible. 
 
 \begin{table}[h!]
 \centering
@@ -105,7 +108,7 @@ F & Pruebas de Aterrizaje con Paracaídas & 14.12. - 21.12. & 1 \\
 \caption{Linea de Tiempo del Despliegue.}
 \end{table}
 
-Después del despliegue, el programa a seguir de la misión científica procederá tal y como se describe en la siguiente tabla. Hay que tener en cuenta que durante toda la misión habrá una conexión constante de datos vía satélite en tiempo real con el robot. La información sobre el estado del robot y los datos sensoriales se transmitirán múltiples veces por día. Los comandos para interrumpir el progreso de la misión se podrán enviar en cualquier momento.
+Una vez desplegada la misión, el programa continuará según la siguiente tabla. Los datos sobre el estado de la misión y autodiagnóstico de Octanis 1 serán enviados varias veces al día de forma automática. Los comandos para cancelar, pausar o modificar la misión podrán ser enviados en cualquier momento.
 
 \begin{table}[h!]
 \centering
